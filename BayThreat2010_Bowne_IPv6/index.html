@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>BayThreat 2010 IPv6</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Sam Bowne">
+		<meta name="transcriber" content="Sonokamome">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<!-- Slide 1Getting Started with IPv6 -->
+				<section>
+					<h2>Getting Started with IPv6</h2>
+					<h3></h3>
+					<p>
+					  <small>Sam Bowne</small>
+					  <small>City College of San Francisco</small>
+					</p>
+					<p>
+						<small><a href="https://samsclass.info">Samsclass.info</a> / <a href="https://twitter.com/sambowne">@sambowne</a></small>
+						<br>
+					</p>
+				</section>
+
+				<!-- Slide 2iClicker Survey-->
+				<section>
+					<h2>iClicker Survey</h2>
+				</section>
+
+				<!-- Slide 3How are you enjoying BayThreat?-->
+				<section>
+					<h2>How are you enjoying BayThreat?</h2>
+					<ol style="list-style: upper-latin">
+						<li>Best Con Ever</li>
+						<li>Worhtwhile</li>
+						<li>Meh</li>
+						<li>Might be OK if there were free beer</li>
+						<li>I'm Bored/ Disgusted / Outraged</li>
+					</ol>
+				</section>
+
+				<!-- Slide 4What do you know about IPv6?-->
+				<section>
+					<h2>What do you know about IPv6?</h2>
+					<ol style="list-style: upper-latin">
+						<li>Never heard of it</li>
+						<li>Heard of it but never used it</li>
+						<li>I understand the address format</li>
+						<li>I browser the Web with IPv6</li>
+						<li>I have deployed IPv6 on servers, routers, etc</li>
+					</ol>
+				</section>
+
+				<!-- Slide 5What plans do you have to use IPv6?-->
+				<section>
+					<h2>What plans do you have to use IPv6?</h2>
+					<ol style="list-style: upper-latin">
+						<li>I don't care about IPv6 at all</li>
+						<li>I'll implement IPv6, but not for years</li>
+						<li>Plannning to implement it within a year</li>
+						<li>Planning to implement it sooner than a year</li>
+						<li>I am already using IPv6</li>
+					</ol>
+				</section>
+
+				<!-- Slide 6Busy Year for Security Professionals-->
+				<section data-background="#1F007D">
+					<h2>Busy Year for Security Professionals</h2>
+				</section>
+
+				<!-- Slide 7Aurora Attacks-->
+				<section data-background="#1F007D">
+					<h2>Aurora Attacks</h2>
+					<ul>
+						<li>China hacked Google</li>
+						<li>Google hacked China</li>
+						<li>Everyone is pwned by APT</li>
+					</ul>
+				</section>
+
+				<!-- Slide 8Stuxnet-->
+				<section data-background="#1F007D">
+					<h2>Stuxnet</h2>
+					<ul>
+						<li>LNK 0Day</li>
+						<li>SCADA vulnerability</li>
+						<li>Successful military operation against Iran via cyperspace</li>
+					</ul>
+				</section>
+
+				<!-- Slide 9Cyber crime Growth-->
+				<section data-background="#1F007D">
+					<h2>Cyber crime Growth</h2>
+					<img src="../BayThreat2010_Bowne_IPv6/assets/images/Picture1.png" alt="chart showing the rise in cyber crime between the years 2002 and 2008">
+					<ul>
+						<li>From Symantec, link BayThreat 1</li>
+					</ul>
+				</section>
+
+				<!-- Slide 10  Wikileaks-->
+				<section data-background="#1F007D">
+					<h2>Wikileaks</h2>
+					<ul>
+						<li>Wikileaks "Insurance file and cable releases"</li>
+						<li>T3hJ35t3r DoS Attacks on Wikileaks</li>
+						<li>DDoS attacks on Wikileaks</li>
+						<li>Amazon, Paypal, DynDNS, MasterCard, Visa all throw Wikileaks under the bus</li>
+						<li>Anonymous attacks Mastercard, Visa, PayPal, a Swiss banks, a Swedish prosecutor's office, Twitter(?)</li>
+					</ul>
+				</section>
+
+				<!-- Slide 11  Frank Drebin-->
+				<section data-background="#1F007D">
+					<h2>Frank Drebin <br> <small>"Where Are You?"</small></h2>
+					<img src="../BayThreat2010_Bowne_IPv6/assets/images/Picture2.png" alt="Frank Drebin in 'Naked Gun'">
+				</section>
+
+				<!-- Slide 12  Forget All That-->
+				<section data-background="#1F007D">
+					<div style="float: left; width: 600px;">
+						<h2>Forget All That</h2>
+						<h3>Because IPv6 is</h3>
+						<h1>The End Of The World!</h1>
+					</div>
+					<img src="../BayThreat2010_Bowne_IPv6/assets/images/Picture3.jpg" style="float:right;" alt="image of old comic with people with 'the end is nigh' facing incoming meteors">
+				</section>
+
+				<!-- Slide 13  IPv4 Exhaustion-->
+				<section data-background="#1F007D">
+					<h2>IPv4 Exhaustion</h2>
+				</section>
+
+				<!-- Slide 14  IPv4 Addresses: 32 Bits-->
+				<section data-background="#1F007D">
+					<h2>IPv4 Addresses: 32 Bits</h2>
+					<ul>
+						<li>IPv4 address: 192.168.1.10
+							<ul>
+								<li>Four bytes</li>
+							</ul>
+						</li>
+						<li>In Binary:
+							<ul>
+								<li>11000000 10101000 00000001 00001010</li>
+							</ul>
+						</li>
+						<li>2<sup>32</sup> total addresses
+							<ul>
+								<li>4 billion</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<!-- Slide 15  IPv4 Address Depletion-->
+				<section data-background="#1F007D">
+					<h2>IPv4 Address Depletion</h2>
+					<img src="../BayThreat2010_Bowne_IPv6/assets/images/Picture4.png" alt="chart showing the IPv4 Address depletion rate">
+					<ul>
+						<li>Link Baythreat-8</li>
+					</ul>
+				</section>
+
+				<!-- Slide 16  IPv4 Address Space-->
+				<section data-background="#1F007D">
+					<h2>IPv4 Address Space</h2>
+					<img src="../BayThreat2010_Bowne_IPv6/assets/images/Picture5.png" alt="Address Space sizes" style="width: 660px; height: auto;">
+				</section>
+
+				<!-- Slide 17  Jan 21, 2010 Available Blocks: 24-->
+				<section data-background="#1F007D">
+					<h2>Jan 21, 2010 <br> Available Blocks: 24</h2>
+					<img src="../BayThreat2010_Bowne_IPv6/assets/images/Picture6.png" alt="image showing the number of available IPv4 address blocks that were available as of Jan 21, 2010" style="width: 560px; height: auto;">
+				</section>
+
+				<!-- Slide 18  April 10, 2010 Available Blocks: 20-->
+				<section data-background="#1F007D">
+					<h2>April 10, 2010 <br> Available Blocks: 20</h2>
+					<img src="../BayThreat2010_Bowne_IPv6/assets/images/Picture7.png" alt="image showing the number of available IPv4 address blocks that were available as of April 10, 2010" style="width: 560px; height: auto;">
+				</section>
+
+				<!-- Slide 19  May 8, 2010 Available Blocks: 13-->
+				<section data-background="#1F007D">
+					<h2>May 8, 2010 <br> Available Blocks: 13</h2>
+					<img src="../BayThreat2010_Bowne_IPv6/assets/images/Picture8.png" alt="image showing the number of available IPv4 address blocks that were available as of May 8, 2010" style="width: 560px; height: auto;">
+				</section>
+
+				<!-- Slide 20  Nov 30, 2010 Available Blocks: 7-->
+				<section data-background="#1F007D">
+					<h2>Nov 30, 2010 <br> Available Blocks: 7</h2>
+					<img src="../BayThreat2010_Bowne_IPv6/assets/images/Picture9.png" alt="image showing the number of available Ipv4 address blocks that were available as of Nov 30, 2010" style="width: 560px; height:auto;">
+				</section>
+
+				<!-- Slide 21  2011: The End-->
+				<section data-background="#1F007D">
+					<h2>2011: The End</h2>
+					<img src="../BayThreat2010_Bowne_Ipv6/assets/images/Picture10.png" alt="image of a report of IPv4 addresses completely gone">
+					<ul>
+						<li>Link BayThreat-7</li>
+					</ul>
+				</section>
+
+				<!-- Slide 22  The End of the World-->
+				<section data-background="#1F007D">
+					<h2>The End of the World</h2>
+					<div style="width: 600px; display: inline-block;">
+						<ul>
+							<li>No Reprieve
+								<ul>
+									<li>IANA Will not re-purpose class D or E addresses for general use</li>
+								</ul>
+							</li>
+							<li>People who ask for IPv4 addresses after exhaustion will not get them
+								<ul>
+									<li>Hoarding, scalping, and simple direct sale of used Ipv4 addresses will begin soon</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<img src="../BayThreat2010_Bowne_Ipv6/assets/images/Picture11.png" alt="../BayThreat2010_Bowne_Ipv6/assets/images/Picture11.png" style="float:right; width: auto; height: 525px;">
+				</section>
+
+				<!-- Slide 23  IPv6-->
+				<section data-background="#1F007D">
+					<h2>IPv6</h2>
+					<h3>The Solution</h3>
+				</section>
+				
+				<!-- Slide 24 IPv6 Addresses: 128 Bits-->
+				<section data-background="#1F007D">
+				<h2>IPv6 Addresses: 128 Bits</h2>
+					<ul>
+						<li>IPv6 address</li>
+						<li>2001:05c0:1000:000b:0000:0000:0000:66fb
+							<ul>
+								<li>Omitting unnecessary zeroes</li>
+							</ul>
+						</li>
+						<li>2001:5c0:1000:b::66fb
+							<ul>
+								<li>Eight fields, each 16 bits long
+									<ul>
+										<li>4 hexadecimal characters</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>2 <sup>128</sup> total addresses
+							<ul>
+								<li>340 billion billion billion billion</li>
+								<li>Enough for a while</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<!-- Slide 25  image UNCLASS projected DOD Timeline-->
+				<section data-background="#1F007D">
+					<image src="../BayThreat2010_Bowne_Ipv6/assets/images/Picture12.png"></image>
+					<ul>
+						<li>Link BayThreat-10</li>
+					</ul>
+				</section>
+
+				<!-- Slide 26  image Federal IPv6 Transition Timeline-->
+				<section data-background="#1F007D">
+					<h2>Federal IPv6 Transition Timeline</h2>
+					<img src="../BayThreat2010_Bowne_Ipv6/assets/images/Picture13.png" alt="image Federal IPv6 Transition Timeline" style="width: 720px; height: 420px;">
+					<ul>
+						<li>From Cisco (link BayThreat-11)</li>
+					</ul>
+				</section>
+
+				<!-- Slide 27  Executive Summary Thus Far-->
+				<section data-background="#1F007D">
+					<h2>Executive Summary Thus Far</h2>
+				</section>
+
+				<!-- Slide 28  IPv4 is Full-->
+				<section data-background="#1F007D">
+					<h2>IPv4 is Full</h2>
+					<img src="../BayThreat2010_Bowne_Ipv6/assets/images/Picture14.png" alt="train in India full of people">
+					<ul>
+						<li>Image from zinyaw.files.wordpress.com</li>
+					</ul>
+				</section>
+
+				<!-- Slide 29  IPv6 resistance if futile-->
+				<section data-background="../BayThreat2010_Bowne_Ipv6/assets/images/Picture15.jpg">
+					<h2>IPv6 <br> <small>RESISTANCE IS FUTILE</small></h2>
+				</section>
+
+				<!-- Slide 30  Migration to IPv6-->
+				<section data-background="#1F007D">
+					<h2>Migration to IPv6</h2>
+				</section>
+
+				<!-- Slide 31  Methods of IPv6 Migration-->
+				<section data-background="#1F007D">
+					<h2>Methods of IPv6 Migration</h2>
+					<ul>
+						<li><strong>Ignore</strong> Ipv6: Stay only IPv4-only</li>
+						<li><strong>Gateways</strong>: Devices that convert Ipv6 to IPv4</li>
+						<li><strong>Tunnel</strong>: IPv6 over IPv4</li>
+						<li><strong>Dual-Stack</strong>: IPv4 and IPv6 together</li>
+						<li><strong>Nirvana</strong>: IPv6-only</li>
+					</ul>
+				</section>
+
+				<!-- Slide 32  IPv6 Tunnels-->
+				<section data-background="#1F007D">
+					<h2>IPv6 Tunnels</h2>
+					<ul>
+						<li>Fast and easy to set up--best for n00bs</li>
+						<li>Not the best for security or performance</li>
+						<li>Free IPv4-to-IPv6 Tunnels
+							<ul>
+								<li>Gogo6.com</li>
+								<li>Sixxs.net</li>
+								<li>Tunnelbroker.com</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<!-- Slide 33  GoGo6-->
+				<section data-background="#1F007D">
+					<h2>GoGo6</h2>
+					<img src="../BayThreat2010_Bowne_Ipv6/assets/images/Picture16.png" alt="image of gogoClIENT Utility" style="width: 350px;">
+					<br>
+						<ul>
+							<li>Easiest</li>
+						</ul>
+				</section>
+
+				<!-- Slide 34  Demonstration-->
+				<section data-background="#1F007D">
+					<h2>Demonstration</h2>
+					<img src="../BayThreat2010_Bowne_Ipv6/assets/images/Picture17.png" alt="screenshot of terminal testing ipv6 ping">
+					<img src="../BayThreat2010_Bowne_Ipv6/assets/images/Picture18.png" alt="screenshot of terminal testing ipv6 pinging II">
+				</section>
+
+				<!-- Slide 35  Companies already on IPv6-->
+				<section data-background="#1F007D">
+					<h2>Companies already on IPv6</h2>
+					<ul>
+						<li>IPv6.google.com</li>
+						<li>www.v6.facebook.com</li>
+						<li>comcast6.net</li>
+						<li>ipv6.cnn.com</li>
+						<li>More at link Baythreat - 12</li>
+					</ul>
+				</section>
+
+				<!-- Slide 36  IPv6 Certifications-->
+				<section data-background="#1F007D">
+					<h2>IPv6 Certifications</h2>
+					<ul>
+						<li>Fun, realistic projects</li>
+						<li>He.net
+							<ul>
+								<li>Link BayThreat - 13</li>
+							</ul>
+						</li>
+					</ul>
+					<img src="../BayThreat2010_Bowne_Ipv6/assets/images/Picture19.png" alt="Image of certificate of completion of something">
+					<img src="../BayThreat2010_Bowne_Ipv6/assets/images/Picture20.png" alt="screenshot of IPv6 certifications">
+				</section>
+
+				<!-- Slide 37  IPv6 Sages-->
+				<section data-background="#1F007D">
+					<h2>IPv6 Sages</h2>
+					<img src="../BayThreat2010_Bowne_Ipv6/assets/images/Picture21.png" alt="chart of Top 20 IPv6 Sages by state">
+					<br>
+					<ul>
+						<li>As of 12-9-10</li>
+						<li>Link BayThreat - 18</li>
+					</ul>
+				</section>
+
+				<!-- Slide 38  IPv6 Sages at CCSF-->
+				<section data-background="#1F007D">
+					<h2>IPv6 Sages at CCSF</h2>
+					<img src="../BayThreat2010_Bowne_Ipv6/assets/images/Picture22.png" alt="CCSF Hurricane Electric Sages" style="width: 690px; height: auto;">
+					<br>
+					<ul>
+						<li>22 Ipv6 Sages at CCSF so far (12-9-10)</li>
+						<li>Link BayTreat - 19</li>
+					</ul>
+				</section>
+
+				<!-- Slide 39  T-Shirt-->
+				<section data-background="#1F007D">
+					<h2>T-Shirt</h2>
+					<img src="../BayThreat2010_Bowne_Ipv6/assets/images/Picture23.jpg" alt="screenshot of Hurricane Electric's 'ipv6 t-shirt' promotion" style="width: 690px; height: auto;">
+					<ul>
+						<li>#1 motivator for IPv6 Certification</li>
+						<li>Link Baythreat - 9</li>
+					</ul>
+				</section>
+
+				<!-- Slide 40  Security Problems-->
+				<section data-background="#1F007D">
+					<h2>Security Problems</h2>
+				</section>
+
+				<!-- Slide 41 Image Extended Unique Identifier EUI-64 -->
+				<section data-background="#1F007D">
+					<img src="../BayThreat2010_Bowne_Ipv6/assets/images/Picture24.png" alt="chart labeled 'Extended Unique Identifier EUI-64'" style="width: 550px; height: auto;">
+					<br>
+					<ul>
+						<li>Used by Ethernet</li>
+					</ul>
+				</section>
+
+				<!-- Slide 42  Privacy Risk-->
+				<section data-background="#1F007D">
+					<h2>Privacy Risk</h2>
+					<ul>
+						<li>Anyone who has your IP address also has your MAC address!</li>
+						<li>There is a "Privacy Extensions" technique to avoid thi, enabled by default in Vista and Windows 7</li>
+					</ul>
+				</section>
+
+				<!-- Slide 43  ICMPv6-->
+				<section data-background="#1F007D">
+					<h2>ICMPv6</h2>
+					<ul>
+						<li>Required for all networks</li>
+						<li>Cannot be blocked</li>
+						<li>Replaced ARP</li>
+						<li>"Neighbor Discovery" is trivial</li>
+					</ul>
+				</section>
+
+				<!-- Slide 44  THC-IPv6 -->
+				<section data-background="#1F007D">
+					<h2>THC-IPv6</h2>
+					<ul>
+						<li>Hacker's Toolkit</li>
+						<li>Runs fine on Ubuntu, even in VMware on Windows 7</li>
+						<li>Instructions: link BayThreat - 14</li>
+					</ul>
+					<img src="../BayThreat2010_Bowne_Ipv6/assets/images/Picture25.png" alt="Ubuntu linux running on Vmware workstation" style="width: 434px; height: auto;">
+				</section>
+
+				<!-- Slide 45  Other Risks-->
+				<section data-background="#1F007D">
+					<h2>Other Risks</h2>
+					<ul>
+						<li>Many security appliacnces are not ready for IPv6, so often bypasses them
+							<ul>
+								<li>Torrents run over IPv6
+									<ul>
+										<li>LInk BayThreat-15</li>
+									</ul>
+								</li>
+								<li>Some VPN appliacnes are not ready, so IPv6 connections must bypass them</li>
+							</ul>
+						</li>
+						<li>Packet Amplification Attacks
+							<ul>
+								<li>Routing Header Zero</li>
+								<li>Ping-Pong
+									<ul>
+										<li>Links BayThreat-16 and 17</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<!-- Slide 46  iClicker-->
+				<section>
+					<h2>iClicker Survey</h2>
+				</section>
+
+				<!-- Slide 47  What do you think of Wikileaks?-->
+				<section>
+					<h2>What do you think of Wikileaks?</h2>
+					<ol style="list-style:upper-latin;">
+						<li>It's heroic and improving the world</li>
+						<li>It does more good than harm</li>
+						<li>It's unimportant</li>
+						<li>It does mroe harm than good</li>
+						<li>It's awful and must be eliminated</li>
+					</ol>
+				</section>
+
+				<!-- Slide 48  What do you think of Anonymous?-->
+				<section>
+					<h2>What do you think of Anonymous?</h2>
+					<ol style="list-style:upper-latin;">
+						<li>It's heroic and improving the world</li>
+						<li>It does more good than harm</li>
+						<li>It's unimportant</li>
+						<li>It does mroe harm than good</li>
+						<li>It's awful and must be eliminated</li>
+					</ol>
+				</section>
+
+				<!-- Slide 49  What do you think of Layer 7 DoS, like SlowLoris or th3J35t3r's XerXes?-->
+				<section>
+					<h3>What do you think of Layer 7 DoS, like SlowLoris or th3J35t3r's XerXes?</h3>
+					<ul>
+						<li>Never heard of it</li>
+						<li>It's of no importance</li>
+						<li>It's a minor threat</li>
+						<li>It's a major threat</li>
+						<li>It's my top priority</li>
+					</ul>
+				</section>
+
+				<!-- Slide 50 What plans do you have to use IPv6?-->
+				<section>
+					<h2>What plans do you have to use IPv6?</h2>
+					<ol style="list-style: upper-latin">
+						<li>I don't care about IPv6 at all</li>
+						<li>I'll implement IPv6, but not for years</li>
+						<li>Planning to implement it within a year</li>
+						<li>Planning to implement it sooner than a year</li>
+						<li>I am already using IPv6</li>
+					</ol>
+				</section>
+
+				<!-- Slide 51 Contact-->
+				<section>
+					<h2>Contact</h2>
+					<ul>
+						<li>Same Bowne</li>
+						<li>Computer Netowrking and Information Technology, City College of San Francisco</li>
+						<li>
+							Email:<a href="sbowne@ccsf.edu"> sbowne@ccsf.edu</a>
+						</li>
+						<li>Twitter: <a href="https://www.twitter.com/sambowne/">@sambowne</a></li>
+						<li>This whole talk and all the referenced links are on my Web site: <a href="https://www.samsclass.info">samsclass.info</a>
+							<ul>
+								<li>In the "Winter Break 2010-2011 Events" section</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'none', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
