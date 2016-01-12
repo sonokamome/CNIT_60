@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>binary1-nybbles-iiC</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Sam Bowne">
+		<meta name="transcriber" content="Sonokamome">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		
+		<!-- Last minute style additions by Sonokamome -->
+		<style>
+			body > div > div.slides > section.has-dark-background.present > table > tbody > tr > td{
+				text-align: center;
+			}
+		</style>
+		
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+			
+				<!-- Slide 1 Binary Lesson 1 Nybbles-->
+				<section data-background="#FF6A00">
+					<h2>Binary Lesson 1 Nybbles</h2>
+				</section>
+				
+				<!-- Slide 2 Base Ten -->
+				<section data-background="#00269F">
+					<h2>Base Ten</h2>
+					<ul>
+						<li>Normal Numbers</li>
+						<li>Each place has one of these values:
+							<ul>
+								<li>0 1 2 3 4 5 6 7 8 9</li>
+							</ul>
+						</li>
+						<li>147 = 1*100 + 4*10 + 7</li>
+						<li>
+							Or 1*10<sup>2</sup> + 4*10 <sup>1</sup>+ 7*10 <sup>0</sup>
+						</li>
+					</ul>
+				</section>
+
+				<!-- Slide 3 Base Ten II-->
+				<section data-background="#00269F">
+					<h2>Base Ten</h2>
+					<img src="../binary1-nybbles-iiC/assets/images/Picture1.png" alt="chart showing base ten number placement values">
+				</section>
+
+				<!-- Slide 4 Base Two-->
+				<section data-background="#00269F">
+					<h2>Base Two</h2>
+					<ul>
+						<li>Binary Numbers</li>
+						<li>Each place has one of these values:
+							<ul>
+								<li>0, 1</li>
+							</ul>
+						</li>
+						<li>11 = 1 * 2 + 1 = 3</li>
+						<li>
+							Or 1*2 <sup>1</sup> + 2 <sup>0</sup>
+						</li>
+					</ul>
+				</section>
+
+				<!-- Slide 5 Base Two II-->
+				<section data-background="#00269F">
+					<h2>Base Two</h2>
+					<img src="../binary1-nybbles-iiC/assets/images/Picture2.png" alt="chart showing base Two number placement values">
+				</section>
+
+				<!-- Slide 6 Counting to 7 (Base 2 and 10)-->
+				<section data-background="#00269F">
+					<h2>Counting to 7 <br> <small>(Base 2 and Base 10)</small></h2>
+					<table>
+						<thead>
+							<tr>
+								<th><span style="color: #19D258">Base 2</span></th>
+								<th><span style="color: #F7961D">Base 10</span></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><span style="color: #19D258; font-weight: bold;">0</span></td>
+								<td><span style="color: #F7961D; font-weight: bold;">0</span></td>
+							</tr>
+							<tr>
+								<td><span style="color: #19D258; font-weight: bold;">1</span></td>
+								<td><span style="color: #F7961D; font-weight: bold;">0</span></td>
+							</tr>
+							<tr>
+								<td><span style="color: #19D258; font-weight: bold;">10</span></td>
+								<td><span style="color: #F7961D; font-weight: bold;">2</span></td>
+							</tr>
+							<tr>
+								<td><span style="color: #19D258; font-weight: bold;">11</span></td>
+								<td><span style="color: #F7961D; font-weight: bold;">3</span></td>
+							</tr>
+							<tr>
+								<td><span style="color: #19D258; font-weight: bold;">100</span></td>
+								<td><span style="color: #F7961D; font-weight: bold;">4</span></td>
+							</tr>
+							<tr>
+								<td><span style="color: #19D258; font-weight: bold;">101</span></td>
+								<td><span style="color: #F7961D; font-weight: bold;">5</span></td>
+							</tr>
+							<tr>
+								<td><span style="color: #19D258; font-weight: bold;">110</span></td>
+								<td><span style="color: #F7961D; font-weight: bold;">6</span></td>
+							</tr>
+							<tr>
+								<td><span style="color: #19D258; font-weight: bold;">111</span></td>
+								<td><span style="color: #F7961D; font-weight: bold;">7</span></td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<!-- Slide 7 Four Bits Make a Nybble-->
+				<section data-background="#00269F">
+					<h2>Four Bits Make a Nybble</h2>
+					<img src="../binary1-nybbles-iiC/assets/images/Picture3.png" alt="diagram of bits making a nybble">
+				</section>
+
+				<!-- Slide 8 Counting to 15-->
+				<section data-background="#00269F">
+					<h2>Counting to 15</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Base 2</th>
+								<th>Base 10</th>
+								<th>Base 2</th>
+								<th>Base 10</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>0</td>
+								<td>0</td>
+								<td>1000</td>
+								<td>8</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>1</td>
+								<td>1001</td>
+								<td>9</td>
+							</tr>
+							<tr>
+								<td>10</td>
+								<td>2</td>
+								<td>1010</td>
+								<td>10</td>
+							</tr>
+							<tr>
+								<td>11</td>
+								<td>3</td>
+								<td>1011</td>
+								<td>11</td>
+							</tr>
+							<tr>
+								<td>100</td>
+								<td>4</td>
+								<td>1100</td>
+								<td>12</td>
+							</tr>
+							<tr>
+								<td>101</td>
+								<td>5</td>
+								<td>1101</td>
+								<td>13</td>
+							</tr>
+							<tr>
+								<td>110</td>
+								<td>6</td>
+								<td>1110</td>
+								<td>14</td>
+							</tr>
+							<tr>
+								<td>111</td>
+								<td>7</td>
+								<td>1111</td>
+								<td>15</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<!-- Slide 9 iClicker Questions-->
+				<section>
+					<h2>iClicker Questions <br> <small>Nybbles</small></h2>
+				</section>
+
+				<!-- Slide 10 What is 7 in binary?-->
+				<section>
+					<h2>What is 7 in binary?</h2>
+					<ol style="list-style: upper-latin;">
+						<li>10</li>
+						<li>100</li>
+						<li>1000</li>
+						<li>1101</li>
+						<li>0111</li>
+					</ol>
+				</section>
+
+				<!-- Slide 11 What is 101 in decimala?-->
+				<section>
+					<h2>What is <code style="color: #FFD800">101</code> in decimal?</h2>
+					<ol style="list-style: upper-latin;">
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+						<li>5</li>
+					</ol>
+				</section>
+
+				<!-- Slide 12 Convert the decimal value 10 to binary:-->
+				<section>
+					<h2>Convert the decimal value <code style="color: #FFD800">10</code> to binary:</h2>
+					<ol style="list-style: upper-latin;">
+						<li>1</li>
+						<li>10</li>
+						<li>2</li>
+						<li>1000</li>
+						<li>1010</li>
+					</ol>
+				</section>
+
+				<!-- Slide 13 Convert the binary value 10 to decimal-->
+				<section>
+					<h2>Convert the binary value <code style="color: #FFD800">10</code> to decimal</h2>
+					<ol style="list-style: upper-latin;">
+						<li>1</li>
+						<li>10</li>
+						<li>2</li>
+						<li>1000</li>
+						<li>1010</li>
+					</ol>
+				</section>
+
+				<!-- Slide 14 Convert the binary value 1011 to decimal-->
+				<section>
+					<h2>Convert the binary value <code style="color: #FFD800">1011</code> to decimal</h2>
+					<ol style="list-style: upper-latin">
+						<li>1</li>
+						<li>10</li>
+						<li>11</li>
+						<li>13</li>
+						<li>14</li>
+					</ol>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'none', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
