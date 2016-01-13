@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>binary5-counting-iC</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Sam Bowne">
+		<meta name="transcriber" content="Sonokamome">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		
+		<!-- Last minute style additions by Sonokamome -->
+		<style>
+			body > div > div.slides > section.has-dark-background.present > table > tbody > tr > td{
+				text-align: center;
+			}
+		</style>
+		
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+			
+				<!-- Slide 1 Binary Lesson 1 Nybbles-->
+				<section data-background="#FF6A00">
+					<h2>Binary Lesson 5 Counting</h2>
+				</section>
+				
+				<!-- Slide 2 Power of 2-->
+				<section data-background="#00269f">
+					<h2>Power of 2</h2>
+					<ul>
+						<li>One bit has 2 possible values (2 <sup>1</sup>)
+							<ul>
+								<li>0 or 1</li>
+							</ul>
+						</li>
+						<li>Two bits have 4 possible values (2 <sup>2</sup>)
+							<ul>
+								<li>00 01 11 10</li>
+							</ul>
+						</li>
+						<li>Three bits have 8 values (2 <sup>3</sup>)
+							<ul>
+								<li>000 001 101 011 100 101 110 111</li>
+							</ul>
+						</li>
+						<li>Four bits have 16 values (2 <sup>4</sup>)
+							<ul>
+								<li>0000 0001 ... 1110 1111</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<!-- Slide 3 A Byte-->
+				<section data-background="#00269f">
+					<h2>A Byte</h2>
+					<ul>
+						<li>8 bits, from 0000000 to 11111111</li>
+						<li>2 <sup>8</sup> combinations</li>
+						<li>2x2x2x2x2x2x2x2 = 256</li>
+						<li>In Hex, 00 to FF</li>
+						<li>In Hex, 00 to FF</li>
+						<li>16 x 16 = 256</li>
+						<li>
+							2 <sup>8</sup> = 2 <sup>4</sup> x 2 <sup>4</sup>
+						</li>
+					</ul>
+				</section>
+
+				<!-- Slide 4 A word - 16 Bits-->
+				<section data-background="#00269f">
+					<h2>A word - 16 Bits</h2>
+					<ul>
+						<li>0000 to FFFF</li>
+						<li>2 <sup>16</sup> values = 65,536</li>
+						<li>2 <sup>16</sup> = 2 <sup>8</sup> x 2 <sup>8</sup> = 256 x 256</li>
+						<li>
+							2 <sup>16</sup> = 2 <sup>4</sup> x 2 <sup>4</sup> x 2 <sup>4</sup> x 2 <sup>4</sup>
+						</li>
+						<li>&#x000A0; &#x000A0; &#x000A0; &#x000A0; &#x000A0;= 16 x 16 x 16 x 16</li>
+					</ul>
+				</section>
+
+				<!-- Slide 5 The Easy Way-->
+				<section data-background="#00269f">
+					<h2>The Easy Way</h2>
+					<ul>
+						<li>2 <sup>10</sup> - 1,024, written as 1K</li>
+						<li>So 16 bits have 2 <sup>16</sup> values</li>
+						<li>2 <sup>16</sup> = 2 <sup>6</sup> x 2 <sup>10</sup> = 2 <sup>6000</sup> = 64 K</li>
+						<li>Approximately 64,000</li>
+					</ul>
+				</section>
+
+				<!-- Slide 6 32 Bits-->
+				<section data-background="#00269f">
+					<h2>32 Bits</h2>
+					<ul>
+						<li>Range of values from</li>
+						<li>0000:0000 to FFFF:FFFF</li>
+						<li>2 <sup>32</sup> values</li>
+						<li>
+							2 <sup>2</sup> x 2 <sup>10</sup> x 2 <sup>10</sup> x 2 <sup>10</sup>
+						</li>
+						<li>4 K K K = 4 K M = 4 G</li>
+						<li>Approximately 4,000,000,000</li>
+					</ul>
+				</section>
+
+				<!-- Slide 7 64 Bits-->
+				<section data-background="#00269f">
+					<h2>64 Bits</h2>
+					<ul>
+						<li>0000:0000:0000:0000 to 1111:1111:1111:1111</li>
+						<li>
+							2 <sup>64</sup>
+						</li>
+						<li>
+							2 <sup>4</sup> x 2 <sup>10</sup> x 2 <sup>10</sup> x 2 <sup>10</sup> x 2 <sup>10</sup> x 2 <sup>10</sup> x 2 <sup>10</sup>
+						</li>
+						<li>16 K K K K K K = 16 G G</li>
+						<li>Approximately</li>
+						<li>16,000,000,000,000,000,000</li>
+					</ul>
+				</section>
+
+				<!-- Slide 8 128 Bits-->
+				<section data-background="#00269f">
+					<h2>128 Bits</h2>
+					<ul>
+						<li> The entire IPv6 address space, from 0000:0000:0000:0000:0000:0000:0000:0000 <br> to <br>ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff</li>
+						<li>
+							2 <sup>128</sup> = 2 <sup>8</sup> x 2 <sup>128</sup>
+						</li>
+						<li>
+							2 <sup>8</sup> + 2 <sup>30</sup> + 2 <sup>30</sup> + 2 <sup>30</sup> + 2 <sup>30</sup>
+						</li>
+						<li>256 G G G G</li>
+						<li>Approximately 256,000,000,000,000,000,000,000,000,000,000,000,000</li>
+					</ul>
+				</section>
+
+				<!-- Slide 9 Slash Notation-->
+				<section data-background="#00269f">
+					<h2>Slash Notation</h2>
+					<ul>
+						<li>fe80::/64 means 64 bits are fixed, so 64 bits vary
+							<ul>
+								<li>2 <sup>64</sup> addresses</li>
+							</ul>
+						</li>
+						<li>fe80::/16 means 16 bits are fixed, so 112 bits vary
+							<ul>
+								<li>2 <sup>112</sup> addresses</li>
+							</ul>
+						</li>
+						<li>2620:1:b::/48 means 48 bits are fixed, so 80 bits vary
+							<ul>
+								<li>2 <sup>80</sup> addresses</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<!-- Slide 10 Binary iClicker Questions-->
+				<section>
+					<h2>Binary iClicker Questions</h2>
+				</section>
+
+				<!-- Slide 11 How many different nybbles are there?-->
+				<section>
+					<h2>How many different nybbles are there? <br> <small>(1 nybble has 4 bits)</small></h2>
+					<ol style="list-style: upper-latin;">
+						<li>2</li>
+						<li>4</li>
+						<li>16</li>
+						<li>256</li>
+						<li>65536</li>
+					</ol>
+				</section>
+
+				<!-- Slide 12 How many different bytes are there?-->
+				<section>
+					<h2>How many different bytes are there? <br> <small>(1 byte has 8 bits)</small></h2>
+					<ol style="list-style: upper-latin">
+						<li>16</li>
+						<li>256</li>
+						<li>65,536</li>
+						<li>16,000,000</li>
+						<li>4,000,000,000</li>
+					</ol>
+				</section>
+
+				<!-- Slide 13 How many different words are there?-->
+				<section>
+					<h2>How many different words are there? <br> <small>(1 word has 16 bits)</small> <br> <small>An approxmiate value is OK</small></h2>
+					<ol style="list-style: upper-latin;">
+						<li>256</li>
+						<li>64,000</li>
+						<li>16,000,000</li>
+						<li>4,000,000,000</li>
+						<li>1,000,000,000,000</li>
+					</ol>
+				</section>
+
+				<!-- Slide 14 How many addresses are in this range?-->
+				<section>
+					<h2>How many addresses are in this range? <br> <code style="color: #FFD800;"><small>ff02::/112</small></code> <br> <small>(An approximate answer is OK)</small></h2>
+					<ol style="list-style: upper-latin;">
+						<li>1</li>
+						<li>256</li>
+						<li>64,000</li>
+						<li>16,000,000</li>
+						<li>4,000,000,000</li>
+					</ol>
+				</section>
+
+				<!-- Slide 15 How many addresses are in this range?-->
+				<section>
+					<h2>How many addresses are in this range? <br> <code style="color: #FFD800;"><small>ff02::/96</small></code> <br> <small>(An approximate answer is OK)</small></h2>
+					<ol style="list-style: upper-latin;">
+						<li>64,000</li>
+						<li>4,000,000,000</li>
+						<li>256,000,000,000,000</li>
+						<li>16,000,000,000,000,000,000</li>
+						<li>64,000,000,000,000,000,000,000,000,000</li>
+					</ol>
+				</section>
+
+				<!-- Slide 16 How many addresses are in this range?-->
+				<section>
+					<h2>How many addresses are in this range? <br> <code style="color: #FFD800;"><small>2610:1:b::/64</small></code> <br> <small>An approximate answer is OK</small></h2>
+					<ol style="list-style: upper-latin;">
+						<li>64,000</li>
+						<li>4,000,000,000</li>
+						<li>256,000,000,000,000</li>
+						<li>16,000,000,000,000,000,000</li>
+						<li>64,000,000,000,000,000,000,000,000,000</li>
+					</ol>
+				</section>
+
+				<!-- Slide 17 How many addresses are in this range?-->
+				<section>
+					<h2>How many addresses are in this range? <br> <code style="color: #FFD800;"><small>2610:1:b::/48</small></code> <br> <small>(An approximate answer is OK)</small></h2>
+					<ol stlye="list-style: upper-latin;">
+						<li>64,000</li>
+						<li>4,000,000,000</li>
+						<li>256,000,000,000,000</li>
+						<li>16,000,000,000,000,000,000</li>
+						<li>64,000,000,000,000,000,000,000,000,000</li>
+					</ol>
+				</section>
+
+				<!-- Slide 18 How many /64 subnets are in a /48 address allocation?-->
+				<section>
+					<h2>How many /64 subnets are in a /48 address allocation? <br> <small>(An approximate answer is OK)</small></h2>
+					<ol style="list-style: upper-latin;">
+						<li>16</li>
+						<li>256</li>
+						<li>64,000</li>
+						<li>4,000,000,000</li>
+						<li>256,000,000,000,000</li>
+					</ol>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'none', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
