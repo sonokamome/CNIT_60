@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Defcon2010_Bowne_IPv6</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Sam Bowne">
+		<meta name="transcriber" content="Sonokamome">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		
+		<!-- Last minute style additions by Sonokamome -->
+		<style>
+			body > div > div.slides > section.has-dark-background.present > table > tbody > tr > td{
+				text-align: center;
+			}
+		</style>
+		
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+			
+				<!-- Slide 1 Binary Lesson 1 Nybbles-->
+				<section data-background="#FF6A00">
+					<h2>Who Cares About IPv6?</h2>
+					<p>Sam Bowne</p>
+					<p>City College of San Francisco</p>
+				</section>
+				
+				<!-- Slide 2 Part 1 Who Cares?-->
+				<section>
+					<h2>Part 1 <br> Who Cares?</h2>
+				</section>
+				
+				<!-- Slide 3 IPv4 Addresses: 32 Bits-->
+				<section>
+					<h2>IPv4 Addresses: 32 Bits</h2>
+					<ul>
+						<li>Ipv4 address: 192.168.1.10
+							<ul>
+								<li>Four bytes</li>
+							</ul>
+						</li>
+						<li>In Binary
+							<ul>
+								<li>11000000 10101000 000000001 00001010</li>
+							</ul>
+						</li>
+						<li>2 <sup>32</sup> total addresses
+							<ul>
+								<li>4 billion</li>
+							</ul>
+						</li>
+						<li>Are you kidding? there are 7 billion people, they each need iPads, cell phones, Google brain chip implants, etc...</li>
+					</ul>
+				</section>
+				
+				<!-- Slide 4 IPv6 Addresses: 128 Bits-->
+				<section>
+					<h2>IPv6 Addresses: 128 Bits</h2>
+					<ul>
+						<li>IPv6 address</li>
+						<li>2001:05c0:1000:000b:0000:0000:0000:66fb
+							<ul>
+								<li>Omitting unnecessary zeroes;</li>
+							</ul>
+						</li>
+						<li>2001:5c0:1000:b::66fb
+							<ul>
+								<li>Eight fileds, each 16 bits long
+									<ul>
+										<li>4 hexadecimal characters</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>2 <sup>128</sup> total addresses
+							<ul>
+								<li>256 billion billino billion billion billion</li>
+								<li>Enough for a while</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				
+				<!-- Slide 5 IPv4 Exhaustion-->
+				<section>
+					<h2>IPv4 Exhaustion</h2>
+					<ul>
+						<li>As of 6-30-2010, 16 "/8 address ranges" remain
+							<ul>
+								<li>each /8 has 16.8 Million Addresses</li>
+								<li>205 /8s already allocated</li>
+								<li>35 Reserved for special uses</li>
+							</ul>
+						</li>
+					</ul>
+					<img src="../Defcon2010_Bowne_IPv6/assets/images/Picture1.png" alt="chart showing the IPv4 Address Pool status">
+					<p>From Link Defcon-talk 3</p>
+				</section>
+				
+				<!-- Slide 6 The End is Near-->
+				<section>
+					<h2>The End is Near</h2>
+					<img src="../Defcon2010_Bowne_Ipv6/assets/images/Picture2.png" alt="image showing projected IANA and RIR unallocated address pool exhaustiong dates">
+					<img src="../Defcon2010_Bowne_Ipv6/assets/images/Picture3.png" alt="image of chart showing the time series of AIANA allocations">
+				</section>
+				
+				<!-- Slide 7 The The End Of The World-->
+				<section>
+					<h2>The End of the World</h2>
+					<div style="width: 600px; display: inline-block;">
+						<ul>
+							<li>No Reprieve
+								<ul>
+									<li>IANA Will not re-purpose class D or E addresses for general use</li>
+								</ul>
+							</li>
+							<li>People who ask for IPv4 addresses after exhaustion will not get them
+								<ul>
+									<li>Hoarding, scalping, and simple direct sale of used Ipv4 addresses will begin soon</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<img src="../Defcon2010_Bowne_Ipv6/assets/images/Picture4.png" alt="../BayThreat2010_Bowne_Ipv6/assets/images/Picture11.png" style="float:right; width: auto; height: 525px;">
+				</section>
+				
+				<!-- Slide 8 Image of Projected DOD Timeline-->
+				<section>
+				<img src="../Defcon2010_Bowne_Ipv6/assets/images/Picture5.png" alt="image showing diagram of the Department of Defense's projected timeline for IPv6 adoption">
+				<p>From link Defcon-talk 4</p>
+				</section>
+				
+				<!-- Slide 9 Federal IPv6 Transition Timeline-->
+				<section>
+					<h2>Federal IPv6 Transition Timeline</h2>
+					<img src="../Defcon2010_Bowne_Ipv6/assets/images/Picture6.png" alt="iamge of diagram shwoing the Federal government's IPv6 Transition Timeline" style="width: 720px; height: 420px;">
+					<p>From Cisco (llink Defcon-talk 2)</p>
+				</section>
+				
+				<!-- Slide 10 Summary of Part 1-->
+				<section>
+					<h2>Summary of Part 1</h2>
+				</section>
+				
+				<!-- Slide 11 IPv4 is Full-->
+				<section>
+					<h2>IPv4 is Full</h2>
+					<img src="../Defcon2010_Bowne_Ipv6/assets/images/Picture7.png" alt="train in India full of people">
+					<p>Image from zinyaw.files.wordpress.com</p>
+				</section>
+				
+				<!-- Slide 12 IPv6 resistance is futile-->
+				<section data-background="../Defcon2010_Bowne_Ipv6/assets/images/Picture8.jpg">
+					<h2>IPv6 <br> <small>RESISTANCE IS FUTILE</small></h2>
+				</section>
+				
+				<!-- Slide 13 Part II What Now?-->
+				<section>
+					<h2>Part II What Now?</h2>
+				</section>
+				
+				<!-- Slide 14 Methods of IPv6 Migration-->
+				<section>
+					<h2>Methods of IPv6 Migration</h2>
+					<ul>
+						<li><strong>ignore</strong> IPv6: Stay on IPv4-only</li>
+						<li><strong>Gateways</strong>: Devices that convert Ipv6 to IPv4</li>
+						<li><strong>Tunne</strong> IPv6 over IPv4</li>
+						<li><strong>Dual-Stack</strong>: IPv4 and IPv6 together</li>
+						<li><strong>Nirvana</strong>: IPv6-only</li>
+					</ul>
+				</section>
+				
+				<!-- Slide 15 IPv6 Tunnels?-->
+				<section>
+					<h2>IPv6 Tunnels?</h2>
+					<ul>
+						<li>Fast and easy to setup--best for n00bs</li>
+						<li>Not the best for security or performance</li>
+						<li>Free IPv4-to-IPv6 Tunnels
+							<ul>
+								<li>Goog6.com</li>
+								<li>Sixxs.net</li>
+								<li>Tunnelbroker.come
+									<ul>
+										<li>Links Defcon-talks 5-7</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				
+				<!-- Slide 16 GoGo6-->
+				<section>
+					<h2>GoGo6</h2>
+					<img src="../Defcon2010_Bowne_Ipv6/assets/images/Picture9.png" alt="image of gogoClIENT Utility" style="width: 350px;">
+					<br>
+						<ul>
+							<li>Easiest</li>
+						</ul>
+				</section>
+				
+				<!-- Slide 17 Demonstration-->
+				<section>
+					<h2>Demonstration</h2>
+					<img src="../Defcon2010_Bowne_Ipv6/assets/images/Picture10.png" alt="screenshot of terminal testing ipv6 ping">
+					<img src="../Defcon2010_Bowne_Ipv6/assets/images/Picture11.png" alt="screenshot of terminal testing ipv6 pinging II">
+				</section>
+				
+				<!-- Slide 18 IPv6 Certifications-->
+				<section>
+					<h2>IPv6 Certifications</h2>
+					<ul>
+						<li>Fun, realistic projects</li>
+						<li>He.net
+							<ul>
+								<li>Link Defcon-talk 12</li>
+							</ul>
+						</li>
+					</ul>
+					<img src="../Defcon2010_Bowne_Ipv6/assets/images/Picture12.png" alt="Image of certificate of completion of something">
+					<img src="../Defcon2010_Bowne_Ipv6/assets/images/Picture13.png" alt="screenshot of IPv6 certifications">
+				</section>
+				
+				<!-- Slide 19 IPv6 Certifications-->
+				<section>
+					<h2>IPv6 Certifications</h2>
+					<img src="../Defcon2010_Bowne_Ipv6/assets/images/Picture14.png" alt="IPv6 Certifications" style="width: 650px; height: auto;">
+				</section>
+				
+				<!-- Slide 20 Part III Security Problems-->
+				<section>
+					<h2>Part III Security Problems</h2>
+				</section>
+				
+				<!-- Slide 21 image Extended Unique Identifier EUI-64-->
+				<section>
+					<img src="../Defcon2010_Bowne_Ipv6/assets/images/Picture15.png" alt="chart labeled 'Extended Unique Identifier EUI-64" style="width: 550px; height: auto;">
+					<p>Used by Ethernet</p>
+				</section>
+				
+				<!-- Slide 22 Privacy Risk-->
+				<section>
+					<h2>Privacy Risk</h2>
+					<ul>
+					 	<li>Anyone who has  your IP address also has your MAC address!</li>
+					 	<li>There is a "Privacy Extensions" tecnique to avoid this, enabled by default in Vista and Windows 7</li>
+					 </ul> 
+				</section>
+				
+				<!-- Slide 23 ICMPv6-->
+				<section>
+					<h2>ICMPv6</h2>
+					<ul>
+						<li>Required for all networks</li>
+						<li>Cannot be blocked</li>
+						<li>Replaces ARP</li>
+						<li>"Neighbor Discovery" is trivial</li>
+					</ul>
+				</section>
+				
+				<!-- Slide 24 THC-IPv6-->
+				<section>
+					<h2>THC-IPv6</h2>
+					<ul>
+						<li>Hacker's Toolkit</li>
+						<li>Runs fine on Ubuntu, even in VMware on Windows 7</li>
+						<li>Instructions: link BayThreat - 14</li>
+					</ul>
+					<img src="../Defcon2010_Bowne_Ipv6/assets/images/Picture16.png" alt="Ubuntu linux running on Vmware workstation" style="width: 434px; height: auto;">
+				</section>
+				
+				<!-- Slide 25 Other Risks-->
+				<section>
+					<h2>Other Risks</h2>
+					<ul>
+						<li>Manyt security apliances are not ready for IPv6, so it often bypasses them
+							<ul>
+								<li>Torrents run over IPv6
+									<ul>
+										<li>Link Defcon-talk 9</li>
+									</ul>
+								</li>
+								<li>Some VPN appliacnes are not ready, so IPv6 connections must bypass them</li>
+							</ul>
+						</li>
+						<li>Packet Amplification Attacks
+							<ul>
+								<li>Routing Header Zero</li>
+								<li>Ping-pong
+									<ul>
+										<li>Links Defcon-talk 10 and 11</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				
+				<!-- Slide 26 Contact-->
+				<section>
+					<h2>Contact</h2>
+					<ul>
+						<li>Same Bowne</li>
+						<li>Computer networking and Information Technology, City College San Francisco</li>
+						<li>
+							Emai: <a href="mailto:sbowne@ccsf.edu">sbowne@ccsf.edu</a>
+						</li>
+						<li>
+							<a href="https://twitter.com/sambowne">https://twitter.com/sambowne</a>
+						</li>
+						<li>This whoel talk adn all the referenced links are on my Web site: samsclass.info
+							<ul>
+								<li>Click "Defcon Materials"</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'none', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
