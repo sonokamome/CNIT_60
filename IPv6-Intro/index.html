@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>IPv6-Intro</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Sam Bowne">
+		<meta name="transcriber" content="Sonokamome">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		
+		<!-- Last minute style additions by Sonokamome -->
+		<style>
+			body > div > div.slides > section.has-dark-background.present > table > tbody > tr > td{
+				text-align: center;
+			}
+		</style>
+		
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+			
+				<!-- Slide 1 Binary Lesson 1 Nybbles-->
+				<section data-background="#FF6A00">
+					<h2>Introduction to IPv6</h2>
+					<p>Sam Bowne</p>
+					<p>City College of San Francisco</p>
+				</section>
+				
+				<!-- Slide 2 90% of this talk is stolen-->
+				<section>
+					<h2>90% of this talk is stolen</h2>
+					<img src="../IPv6-Intro/assets/images/Picture1.png" alt="iamge titled 'IPv6 what, why, how'">
+					<br>
+					<ul>
+						<li>I got it here
+							<ul>
+								<li>CNIT 202E, link IPv6 8</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<!-- Slide 3 IPv4 Exhaustion-->
+				<section>
+					<h2>IPv4 Exhaustion</h2>
+					<ul>
+						<li>Available pool is 18 "/8 address ranges"
+							<ul>
+								<li>each /8 has 16.8 Million Addresses</li>
+							</ul>
+						</li>
+						<li>203 already allocated</li>
+						<li>35 Reserved for special uses
+							<ul>
+								<li>Data from 5-13-2010, CNIT 202E, link IPv6 3</li>
+							</ul>
+						</li>
+					</ul>
+					<img src="../IPv6-Intro/assets/images/Picture2.png" alt="chart showing IPv4 Address Pool Status">
+				</section>
+
+				<!-- Slide 4 The End is Near-->
+				<section>
+					<h2>The End is Near</h2>
+					<img src="../IPv6-Intro/assets/images/Picture3.png" alt="IANA and RIR Unallocated address pool exhaustion">
+					<img src="../IPv6-Intro/assets/images/Picture4.png" alt="chart showing 'Time Series of IANA Allocations'">
+				</section>
+
+				<!-- Slide 5 chart showing of IPv6 address breakdown-->
+				<section>
+					<img src="../IPv6-Intro/assets/images/Picture5.png" alt="chart showing of IPv6 address breakdown">
+				</section>
+
+				<!-- Slide 6 IPv6 Address Format-->
+				<section>
+					<h2>IPv6 Address Format</h2>
+					<code style="color: #FFD800;">X:X:X:X:X:X:X:X</code>
+					<p>Where <span style="color: #FFD800;">X</span> = <span style="color: #FFD800;">0000</span> ... <span style="color: #FFD800;">FFFF</span> (hex)</p>
+
+					<ul>
+						<li>2001:0DB8:0000:0000:0008:8000:0000:417A</li>
+						<li><span style="color: #FFD800;">2001:DB8:0:0:8:8000:0:417A</span></li>
+						<li>2001:DB8::8:8000:0:417A</li>
+						<li><span style="color: #FFD800;">2001:DB8:0:0:8:8000::417A</span></li>
+						<li>2001:db8::8:8000:417A</li>
+					</ul>
+					<br><br>
+					<ul>
+						<li>:: can be used once to reperesent a string of zeroes</li>
+					</ul>
+				</section>
+
+				<!-- Slide 7 image showing multiple zeros can be omitted entirely but only once in an address-->
+				<section>
+					<img src="../IPv6-Intro/assets/images/Picture6.png" alt="image showing multiple zeros can be omitted entirely but only once in an address" style="width: 670px; height: auto;">
+					<P>From Zytrax: link IPv6 10</P>
+				</section>
+
+				<!-- Slide 8 IPv6 - IPv4 Addresses-->
+				<section>
+					<h2>IPv6 - IPv4 Addresses</h2>
+					<ul>
+						<li>A hybrid format may be used when dealing with IPv6-IPv4 addresses where the normal IPv4 dotted decimal notation may be used after the first 6, 16 bit address elements:</li>
+					</ul>
+					<img src="../IPv6-Intro/assets/images/Picture7.png" alt="image screenshot showing hybrid IPv6-IPv4 addresses" style="width: 710px; height: 210px;">
+				</section>
+
+				<!-- Slide 9 Examples-->
+				<section>
+					<h2>Examples</h2>
+					<ul>
+						<li><strong>loopback address</strong>
+							<ul>
+								<li><code style="color: #FFD800;">0:0:0:0:0:0:0:1 or ::1</code></li>
+							</ul>
+						</li>
+						<li><strong>Unspecified address</strong>
+							<ul>
+								<li><code style="color: #FFD800;">0:0:0:0:0:0:0:0</code> or <code style="color: #FFD800;">::</code></li>
+							</ul>
+						</li>
+						<li><strong>Special expception: IPv4-mapped</strong>
+							<ul>
+								<li><code style="color: #FFD800;">0:0:0:0:0:FFFF:192.0.2.1</code></li>
+								<li>or <code style="color: #FFD800;">::FFFF:192.0.2.1</code></li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<!-- Slide 10 IPv6 Address Types-->
+				<section>
+					<h2>IPv6 Address Types</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Address Type</th>
+								<th>Binary Prefix</th>
+								<th>Prefix</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Unspecified</td>
+								<td><code style="color: #FFD800;">000...0</code> (128 bits)</td>
+								<td><code style="color: #FFD800;">::/128</code></td>
+							</tr>
+							<tr>
+								<td>Loopback</td>
+								<td><code style="color: #FFD800;">000...01</code> (128 bits)</td>
+								<td><code style="color: #FFD800;">::1/128</code></td>
+							</tr>
+							<tr>
+								<td>Link-local unicast</td>
+								<td><code style="color: #FFD800;">1111 1110 10</code></td>
+								<td><code style="color: #FFD800;">FE80::/10</code></td>
+							</tr>
+							<tr>
+								<td>Multicast</td>
+								<td><code style="color: #FFD800;">1111 1111</code></td>
+								<td><code style="color: #FFD800;">FF00::/8</code></td>
+							</tr>
+							<tr>
+								<td>Global Unicast</td>
+								<td colspan="2">All other addresses</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<!-- Slide 11 IPv6 Link-Local Addresses-->
+				<section>
+					<h2>IPv6 Link-Local Addresses</h2>
+					<img src="../IPv6-Intro/assets/images/Picture8.png" alt="chart showing layout breakdown for IPv6 Addresses" style="width:600px; height: auto;">
+					<ul>
+						<li>FE80::/10 prefix</li>
+						<li>Analogous to IPv4 169.254.0.0/16</li>
+						<li>Automatically assigned to an interface</li>
+						<li style="color: #1177FF;">Valid in the scope of the given link! Not be routed!</li>
+						<li>To eb used for
+							<ul>
+								<li>auto-address configuration</li>
+								<li>neighbour discovery</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<!-- Slide 12 Global Unicast-->
+				<section>
+					<h2>Global Unicast</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Address Type</th>
+								<th>Binary Prefix</th>
+								<th>Prefix</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Unspecified</td>
+								<td><code style="color: #FFD800;">000...0</code> (128 bits)</td>
+								<td><code style="color: #FFD800;">::/128</code></td>
+							</tr>
+							<tr>
+								<td>Loopback</td>
+								<td><code style="color: #FFD800;">000...01</code> (128 bits)</td>
+								<td><code style="color: #FFD800;">::1/128</code></td>
+							</tr>
+							<tr>
+								<td>Link-local unicast</td>
+								<td><code style="color: #FFD800;">1111 1110 10</code></td>
+								<td><code style="color: #FFD800;">FE80::/10</code></td>
+							</tr>
+							<tr>
+								<td>Multicast</td>
+								<td><code style="color: #FFD800;">1111 1111</code></td>
+								<td><code style="color: #FFD800;">FF00::/8</code></td>
+							</tr>
+							<tr>
+								<td>Global Unicast</td>
+								<td colspan="2">All other addresses</td>
+							</tr>
+						</tbody>
+					</table>
+					<img src="../IPv6-Intro/assets/images/Picture9.png" alt="diagram breakdown of IPv6 Global Unicast address" style="width: 720px; height: 180px;">
+				</section>
+
+				<!-- Slide 13 Interface Identifier | How to Configure-->
+				<section>
+					<h2>Interface Identifier <br> How to Configure</h2>
+					<ul>
+						<li>Manual configuration</li>
+						<li>Autoconfiguration (EUI-64-based Interface ID)</li>
+						<li>DHCPv6</li>
+						<li>Pseudo-random interface ID</li>
+						<li>Cryptographically generated ID</li>
+					</ul>
+				</section>
+
+				<!-- Slide 14 Multiple Addresses-->
+				<section>
+					<h2>Multiple Addresses</h2>
+					<ul>
+						<li>Note: INterfaces normally have two addresses, or even more
+							<ul>
+								<li>Link-local (<code style="color: #FFD800;">FE80::W.X.Y>Z</code>)</li>
+								<li>Global unicast</li>
+							</ul>
+						</li>
+					</ul>
+					<img src="../IPv6-Intro/assets/images/Picture10.png" alt="Image of a terminal reporting a client's Local Area connection that's via IPv6">
+				</section>
+
+				<!-- Slide 15 Extended Unique Idnetifire EUI-64-->
+				<section>
+					<h2>Extended Unique Idnetifire EUI-64</h2>
+					<img src="../IPv6-Intro/assets/images/Picture11.png" alt="diagram of Extended Unique Idnetifier" style="width: 690px; height: auto;">
+					<ul>
+						<li>Used by Ethernet</li>
+					</ul>
+				</section>
+
+				<!-- Slide 16 Example-->
+				<section>
+					<h2>Example</h2>
+					<div style="text-align: left; display: inline-block;">
+						<code style="color: #FFD800;">Interface MAC 00-40-63-ca-9a-20</code>
+						<br>
+						<code style="color: #FFD800;">IPv6 Interface ID (EUI-64)</code>
+						<br>
+						<code style="color: #FFD800;">::0040:64FF:FECA:9A20</code>
+						<p>or</p>
+						<code style="color: #FFD800;">::40:63FF:FECA:9A20</code>
+						<p>link local</p>
+						<code style="color: #FFD800;">FE80::40:63FF:FECA:9A20</code>
+					</div>
+				</section>
+
+				<!-- Slide 17 IPv6 Header Format-->
+				<section>
+					<h2>IPv6 Header Format</h2>
+					<img src="../IPv6-Intro/assets/images/Picture12.png" alt="image diagram of a IPv6 header format">
+				</section>
+
+				<!-- Slide 18 IPv4 Header Format-->
+				<section>
+					<h2>IPv4 Header Format</h2>
+					<img src="../IPv6-Intro/assets/images/Picture13.png" alt="image diagram shwoing IPv4 Header Format">
+				</section>
+
+				<!-- Slide 19 IPv6 Header-->
+				<section>
+					<h2>IPv6 Header</h2>
+					<ul>
+						<li>Fixed length</li>
+						<li>
+							All optional/additional info is encoded in <strong>Extension headers(s)</strong>
+						</li>
+						<li>Is not protected by checksum</li>
+						<li><strong>Payload</strong> Length instead of <strong>Total</strong> Length</li>
+						<li>"Time To Live" field is replaced by "Hop Limit" one to better reflect its functions</li>
+					</ul>
+				</section>
+
+				<!-- Slide 20 Control Protocol(s)-->
+				<section>
+					<h2>Control Protocol(s)</h2>
+					<ul>
+						<li>IPv4 Control Protocols:
+							<ul>
+								<li>ARP (for Ethernet)</li>
+								<li>ICMP</li>
+								<li>IGMP</li>
+							</ul>
+						</li>
+						<li>IPv6 Control Protocol:</li>
+					</ul>
+					<br><br>
+					<h3 style="color: #FF4211;">ICMPv6</h3>
+					<p>(IPv6 Next header value = 58) <br> <strong style="color: #FF4211;">Must be</strong> fully implemented &#x00026; supported!</p>
+				</section>
+
+				<!-- Slide 21 ICMPv6-->
+				<section>
+					<h2>ICMPv6</h2>
+					<ul>
+						<li>Type field:
+							<ul>
+								<li>0 &#x02014; 127: error messages</li>
+								<li>128 &#x02014; 255: informational messages</li>
+							</ul>
+						</li>
+						<li>body includes the start of the invoking packet!</li>
+						<li>Must not be fragmented!</li>
+						<li>Must not be originated in response to
+							<ul>
+								<li>ICMPv6 error or redirect messages</li>
+								<li>multicast/broadcast packets addresses (with some exceptions)</li>
+							</ul>
+						</li>
+					</ul>
+					<img src="../IPv6-Intro/assets/images/Picture14.png" alt="image diagram showing the breakdown of ICMPv6 packet format">
+				</section>
+
+				<!-- Slide 22 Big Brother is watching you!-->
+				<section data-background="../IPv6-Intro/assets/images/Picture15.png">
+					<div style="background-color: rgba(25, 25, 25, 0.71); padding: 24px;">
+						<h2>Big Brother is watching you!</h2>
+						<ul>
+							<li>MAC addresses are globally unique (in most cases)</li>
+							<li>SLAAC: Interface ID is derived from MAC</li>
+							<li>Users are mobile <span style="font-style: italic;">(home &#x02014; office &#x02014; internet-cafe &#x02014; business trips &#x02014; travels &#x02014; office &#x02014; home..):</span>
+								<ul>
+									<li>network prefixes are changing</li>
+									<li>interface Id remains constant over time!</li>
+								</ul>
+							</li>
+							<li>User can be identified and tracked!</li>
+						</ul>
+					</div>
+				</section>
+
+				<!-- Slide 23 Privacy Extensions for SLAAC-->
+				<section>
+					<h2>Privacy Extensions for SLAAC</h2>
+					<ul>
+						<li><strong>Task</strong>: Provide privacy for users</li>
+						<li><strong>Requirements</strong>: do not broke SLAAC</li>
+						<li><strong>Approach</strong>: change the interface ID over time</li>
+						<li>Interface ID must be <strong style="color: #1177FF;">locally</strong> (on-link) unique</li>
+						<li>Interface ID can be random</li>
+						<li>Duplicate Address Detection ensures inqueness</li>
+						<li>In case of collision a new random address is generated</li>
+					</ul>
+				</section>
+
+				<!-- Slide 24 IPv6 & DNS-->
+				<section>
+					<h2>IPv6 &#x00026; DNS</h2>
+					<ul>
+						<li>New Resource Record introduced: AAAA
+							<ul>
+								<li>
+									<code> furry:~furr1dig www.kame.net aaaa</code>
+								</li>
+								<li>wwww.kame.net. IN AAAA 20001:200::8002:203:47ff:fea5:3085</li>
+							</ul>
+						</li>
+						<li>Reverse Delegation:
+							<ul>
+								<li>the pseudo-domain ipv6.arpa</li>
+								<li>Each label is a nibble (4 bits, one hex number)</li>
+							</ul>
+						</li>
+						<li>Example
+							<ul>
+								<li>
+									<code>PTR RR for an IPv6 address <strong>2001: db8::20:219f:bd8c:17af</strong></code>
+								</li>
+								<li>
+									<code style="font-size: 0.8em;">f.a.7.1.c.8.d.b.f.9.2.1.0.2.0.0.0.0.0.0.0.0.0.0.8.b.d.0.1.0.0.2.ipv6.arpa. PTR</code>
+								</li>
+								<li>Dont' forget to use $ORIGIN to simplify your DNS zone file!</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<!-- Slide 25 AAAA Records in DNS-->
+				<section>
+					<h2>AAAA Records in DNS</h2>
+					<img src="../IPv6-Intro/assets/images/Picture16.png" alt="screenshot of command line prompt showing the AAAA Records in DNS for nrcns.westlandrdc.mi.michigan.comcast.net">
+					<ul>
+						<li>iana.org and ipv6.net work too</li>
+					</ul>
+				</section>
+
+				<!-- Slide 26 Migration-->
+				<section>
+					<h2>Migration</h2>
+					<ul>
+						<li>Dual-stack nodes (IPv6+IPv4)
+							<ul>
+								<li>most workstations air IPv6-enabled</li>
+								<li>Windows: prefers IPv6 in some cases</li>
+								<li>uncontrolled connectivity is a security issue!</li>
+							</ul>
+						</li>
+						<li>Tunnels: connection of IPv6 domains via IPv4 clouds</li>
+						<li>Address translation: interconnetion between IPv6 and IPv4 domains</li>
+					</ul>
+				</section>
+
+				<!-- Slide 27 IPv6 Advantages-->
+				<section>
+					<h2>IPv6 Advantages</h2>
+					<ul>
+						<li>More efficient address space allocation</li>
+						<li>End-to-end addressing; no NAT anymore!</li>
+						<li>Fragmentation only by the source host</li>
+						<li>Routers do not clacluate header checksum (speedup!)</li>
+						<li>Multicasting instead of broadcasting</li>
+						<li>Built-in security mechanisms</li>
+						<li>Single control protocol (ICMPv6)</li>
+						<li>Auto-configuration</li>
+						<li>Modular header structure</li>
+					</ul>
+				</section>
+
+				<!-- Slide 28 Where are we with IPv6 - and where we're going-->
+				<section>
+					<img src="../IPv6-Intro/assets/images/Picture17.png" alt="diagram image showing V6 over v4 tunnels" style="width: 750px; height: 500px;">
+					<ul>
+						<li>In CNIT 202E - Link IPv6 1</li>
+					</ul>
+				</section>
+
+				<!-- Slide 29 Projected DOD Timeline image-->
+				<section>
+					<img src="../IPv6-Intro/assets/images/Picture18.png" alt="diagram projected DOD Timeline" style="width:800px; height: 520px;">
+				</section>
+
+				<!-- Slide 30 Federal IPv6 Transition Timeline-->
+				<section>
+					<h2>Federal IPv6 Transition Timeline</h2>
+					<img src="../IPv6-Intro/assets/images/Picture19.png" alt="diagram showing the Federal IPv6 Transition Timeline by Cisco dated Sept 2009" style="width: 710px; height: 420px;">
+					<ul>
+						<li>Cisco, Sept 2009 (CNIT 202E, Link IPv6 9)</li>
+					</ul>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'none', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
