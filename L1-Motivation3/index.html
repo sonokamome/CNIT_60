@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>L1-Motivation3</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Sam Bowne">
+		<meta name="transcriber" content="Sonokamome">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		
+		<!-- Last minute style additions by Sonokamome -->
+		<style>
+			body > div > div.slides > section.has-dark-background.present > table > tbody > tr > td{
+				text-align: center;
+			}
+
+      /* A small animation for slide 3 */
+      .colorCycle{
+        animation-name: homeCycle; 
+        animation-duration:1.15s; 
+        animation-direction:alternate; 
+        animation-iteration-count:infinite; 
+      }
+
+      @keyframes homeCycle 
+      {
+      25% {color:#fff;} 
+      50% {color:#FF0000;} 
+      75% {color:#fff;}
+      } 
+		</style>
+		
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+			
+				<!-- Slide 1 Binary Lesson 1 Nybbles-->
+				<section data-background="#FF6A00">
+					<h2>Introduction to IPv6</h2>
+					<p>Sam Bowne</p>
+					<p>City College of San Francisco</p>
+				</section>
+				
+				<!-- Slide 2 Motivation-->
+        <section>
+          <h1>Motivation</h1>
+        </section>
+
+        <!-- Slide 3 IPv4 Exhaustion-->
+        <section>
+          <h2>IPv4 Exhaustion</h2>
+          <span class="colorCycle" style="font-size: 2.8em; font-weight: 600;">The End Of The World!</span style="font-size: 2.2em;">
+          <img src="../L1-Motivation3/assets/images/Picture1.jpg" alt="stock image of a comic showing a meteor incoming people's way">
+        </section>
+
+        <!-- Slide 4 IPv4 Addresses: 32 Bits-->
+        <section>
+          <h2>IPv4 Addresses: 32 Bits</h2>
+          <ul>
+            <li>Ipv4 address: 192.168.1.10
+              <ul>
+                <li>Four bytes</li>
+              </ul>
+            </li>
+            <li>In Binary: 11000000 10101000 00000001 00001010</li>
+            <li>2 <sup>32</sup> total addresses
+              <ul>
+                <li>4 billion</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 5 Internet Registry Regions-->
+        <section>
+          <h2>Internet Registry Regions <br> <a href="http://www.iana.org/numbers/"><small>www.iana.org/numbers</small></a></h2>
+          <img src="../L1-Motivation3/assets/images/Picture2.png" alt="iana registry world map" style="width: 670px; height: auto;">
+          <img src="../L1-Motivation3/assets/images/Picture3.png" alt="IPv6 logo">
+        </section>
+
+        <!-- Slide 6 IPv4 Address Depletion (2011)-->
+        <section>
+          <h2>IPv4 Address Depletion (2011)</h2>
+          <img src="../L1-Motivation3/assets/images/Picture4.png" alt="chart showing Registry Exhaustion Dates" style="width: 730px; height: auto;">
+        </section>
+
+        <!-- Slide 7 RIR IPv4 Address Run-Down Model Chart image-->
+        <section>
+          <img src="../L1-Motivation3/assets/images/Picture5.png" alt="RIR IPv4 Address Run-Down Model Chart">
+        </section>
+
+        <!-- Slide 8 RIR IPv4 Addres Run-Down Model - Variance Analysis-->
+        <section>
+          <img src="../L1-Motivation3/assets/images/Picture6.png" alt="RIR IPv4 Addres Run-Down Model - Variance Analysis">
+        </section>
+
+        <!-- Slide 9 Jan 14, 2014-->
+        <section>
+          <h2>Jan 14, 2014</h2>
+          <img src="../L1-Motivation3/assets/images/Picture7.png" alt="ARIN IPv4 Space Available: 1.47 /Bs in aggregate">
+          <ul>
+            <li>Phase 4: All IPv4 requests, regardless of size, are sbuject to team review. Requests for IPv4 address blocks /15 and larver require department director approval</li>
+            <li><a href="https://www.arin.net/resources/request/ipv4_countdown.html">https://www.arin.net/resources/request/ipv4_countdown.html</a></li>
+          </ul>
+        </section>
+
+        <!-- Slide 10 Game Over-->
+        <section>
+          <img src="../L1-Motivation3/assets/images/Picture8.jpg" alt="Game Over" style="height: 165px; width: 580px;">
+          <ul>
+            <li>No Reprieve
+              <ul>
+                <li>IANA will not re-purpose class D or E addresses for general use</li>
+              </ul>
+            </li>
+            <li>Peaople who ask for IPv4 addresses after exhaustion will not get them
+              <ul>
+                <li>Hoardin, scalping, and simple direct sale of used IPv4 addresses will begin soon</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 11 IPv6 The Solution-->
+        <section>
+          <h1>IPv6 <br><small>The Solution</small></br></h1>
+        </section>
+
+        <!-- Slide 12 IPv6 Addresse: 128 bits-->
+        <section>
+          <h2>IPv6 Addresse: 128 bits</h2>
+          <ul>
+            <li>IPv6 address</li>
+            <li>
+              <code style="color: #FFD800;">2001:05C0:1000:000b:0000:0000:0000:66FB</code>
+              <ul>
+                <li>Omitting unnecessary zeroes;</li>
+              </ul>
+            </li>
+            <li>
+              <code style="color: #FFD800;">2001:5c0:1000:b::66FB</code>
+              <ul>
+                <li>Eight fields, wach 16 bits long
+                  <ul>
+                    <li>4 hexadecimals characters</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>2<sup>128</sup> total addresses
+              <ul>
+                <li>340 billion billion billion billion</li>
+                <li>Enough for a while</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 13 Projected DOD Timeline image-->
+        <section>
+          <img src="../L1-Motivation3/assets/images/Picture9.png" alt="Projected DOD Timeline" style="width: 750px; height: 480px;">
+          <ul>
+            <li>Link BayThreat10</li>
+          </ul>
+        </section>
+
+        <!-- Slide 14 Federal IPv6 Transition Timeline-->
+        <section>
+          <h2>Federal IPv6 Transition Timeline</h2>
+          <img src="../L1-Motivation3/assets/images/Picture10.png" alt="Image of federal IPv6 Transition Timeline" style="width: 700px; height: 400px;">
+          <ul>
+            <li>From Cisco (link BayThreat 11)</li>
+          </ul>
+        </section>
+
+        <!-- Slide 15 Migration to IPv6-->
+        <section>
+          <h2>Migration to IPv6</h2>
+        </section>
+
+        <!-- Slide 16 Methods of IPv6 Migration-->
+        <section>
+          <h2>Methods of IPv6 Migration</h2>
+          <ul>
+            <li><strong>Ignore</strong> IPv6: Stay on IPv4-only</li>
+            <li><strong>Gateways</strong>: Devices that convert IPv6 to IPv4
+              <ul>
+                <li>Cloudflare provides this service for free!</li>
+              </ul>
+            </li>
+            <li><strong>Tunnel</strong>: IPv6 over IPv4</li>
+            <li><strong>Dual-Stack</strong>: Ipv4 and IPv6 together</li>
+            <li><strong>Nirvana</strong>: IPv6-only</li>
+          </ul>
+        </section>
+
+        <!-- Slide 17 IPv6 Tunnels-->
+        <section>
+          <h2>IPv6 Tunnels</h2>
+          <ul>
+            <li>Fast and easy to set up &#x02014; best for n00bs</li>
+            <li>Nto best for security or performance</li>
+            <li>Free IPv4-to-IPv6 Tunnels
+              <ul>
+                <li>Gogo6.com</li>
+                <li>Sixx.net</li>
+                <li>Tunnelbroke.com</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 18 GoGo6 Client-->
+        <section>
+          <h2>GoGo6 CLeint</h2>
+          <img src="../L1-Motivation3/assets/images/Picture11.png" alt="GogoCLIENT Utility screenshot" style="width: 400px; height: auto;">
+          <br>
+          <ul>
+            <li>Easiest</li>
+          </ul>
+
+        </section>
+
+        <!-- Slide 19 Demonstration-->
+        <section>
+          <h2>Demonstration</h2>
+          <img src="../L1-Motivation3/assets/images/Picture12.png" alt="screenshot of terminal pinging an IPv6 address">
+          <img src="../L1-Motivation3/assets/images/Picture13.png" alt="screenshot of terminal doing nslookup on an IPv6 address">
+        </section>
+
+        <!-- Slide 20 Companies Already on IPv6-->
+        <section>
+          <h2>Companies Already on IPv6</h2>
+          <ul>
+            <li>IPv6.google.com</li>
+            <li>www.v6.facebook.com</li>
+            <li>comcast6.net</li>
+            <li>ipv6.cnn.com</li>
+            <li>More at link Baythreat-12</li>
+          </ul>
+        </section>
+
+        <!-- Slide 21 IPv6 Certifications-->
+        <section>
+          <h2>IPv6 Certifications</h2>
+          <ul>
+            <li>Fun, realistic projects</li>
+            <li>He.net
+              <ul>
+                <li>Link BayThreat - 13</li>
+              </ul>
+            </li>
+          </ul>
+          <img src="../L1-Motivation3/assets/images/Picture14.png" alt="Image of certificate of completion of something">
+          <img src="../L1-Motivation3/assets/images/Picture15.png" alt="screenshot of IPv6 certifications">
+        </section>
+
+        <!-- Slide 22 IPv6 Sages-->
+        <section>
+          <h2>IPv6 Sages</h2>
+          <img src="../L1-Motivation3/assets/images/Picture16.png" alt="chart of Top 20 IPv6 Sages by state">
+          <br>
+          <ul>
+            <li>As of 12-9-10</li>
+            <li>Link BayThreat - 18</li>
+          </ul>
+        </section>
+
+        <!-- Slide 23 IPv6 Sages at CCSF-->
+        <section>
+        <h2>IPv6 Sages at CCSF</h2>
+          <img src="../L1-Motivation3/assets/images/Picture17.png" alt="CCSF Hurricane Electric Sages" style="width: 690px; height: auto;">
+          <br>
+          <ul>
+            <li>22 Ipv6 Sages at CCSF so far (12-9-10)</li>
+            <li>Link BayTreat - 19</li>
+          </ul>
+        </section>
+
+        <!-- Slide 24 T-Shirt-->
+        <section>
+        <h2>T-Shirt</h2>
+          <img src="../L1-Motivation3/assets/images/Picture18.jpg" alt="screenshot of Hurricane Electric's 'ipv6 t-shirt' promotion" style="width: 690px; height: auto;">
+          <ul>
+            <li>#1 motivator for IPv6 Certification</li>
+            <li>Link Baythreat - 9</li>
+          </ul>
+        </section>
+
+        <!-- Slide 25 Security Problems-->
+        <section>
+          <h1>Security Problems</h1>
+        </section>
+
+        <!-- Slide 26 Extended Unique Identifiers EUI 64-->
+        <section>
+        <img src="../L1-Motivation3/assets/images/Picture19.png" alt="chart labeled 'Extended Unique Identifier EUI-64'" style="width: 550px; height: auto;">
+          <br>
+          <ul>
+            <li>Used by Ethernet</li>
+          </ul>
+        </section>
+
+        <!-- Slide 27 Privacy Risk-->
+        <section>
+        <h2>Privacy Risk</h2>
+          <ul>
+            <li>Anyone who has your IP address also has your MAC address!</li>
+            <li>There is a "Privacy Extensions" technique to avoid thi, enabled by default in Vista and Windows 7</li>
+          </ul>
+        </section>
+
+        <!-- Slide 28 ICMPv6-->
+        <section>
+        <h2>ICMPv6</h2>
+          <ul>
+            <li>Required for all networks</li>
+            <li>Cannot be blocked</li>
+            <li>Replaced ARP</li>
+            <li>"Neighbor Discovery" is trivial</li>
+          </ul>
+        </section>
+
+        <!-- Slide 29 THC IPv6-->
+        <section>
+        <h2>THC-IPv6</h2>
+          <ul>
+            <li>Hacker's Toolkit</li>
+            <li>Runs fine on Ubuntu, even in VMware on Windows 7</li>
+            <li>Instructions: link BayThreat - 14</li>
+          </ul>
+          <img src="../L1-Motivation3/assets/images/Picture20.png" alt="Ubuntu linux running on Vmware workstation" style="width: 434px; height: auto;">
+        </section>
+
+        <!-- Slide 30 Other Risks-->
+        <section>
+        <h2>Other Risks</h2>
+          <ul>
+            <li>Many security appliacnces are not ready for IPv6, so often bypasses them
+              <ul>
+                <li>Torrents run over IPv6
+                  <ul>
+                    <li>LInk BayThreat-15</li>
+                  </ul>
+                </li>
+                <li>Some VPN appliacnes are not ready, so IPv6 connections must bypass them</li>
+              </ul>
+            </li>
+            <li>Packet Amplification Attacks
+              <ul>
+                <li>Routing Header Zero</li>
+                <li>Ping-Pong
+                  <ul>
+                    <li>Links BayThreat-16 and 17</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 31 iClicker-->
+        <section>
+        <h1>Class Overview</h1>
+        </section>
+
+        <!-- Slide 32 IPv6 Certification-->
+        <section>
+          <h2>IPv6 Certification</h2>
+          <ul>
+            <li>Every student shouldu be a Certified IPv6 GUru by the end of the class</li>
+            <li>Many extra credit projects to go beyond that
+              <ul>
+                <li>Cisco routing for students who know Cisco routing</li>
+                <li>Windows: Router advertisements</li>
+                <li>Linux: IPv6-to-IPv4 Reverse Proxy</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 33 Hurricane Electric IPv6 Certification (part 1)-->
+        <section>
+          <h2>Hurricane Electric IPv6 Certification (part 1)</h2>
+          <ol>
+            <li>Registering at Hurricane Electric</li>
+            <li>Newb Test
+              <ul>
+                <li>Demonstrate basic knowledge of IPv6</li>
+                <li>
+                  Become an IPv6 <strong style="color: #FFD800;">Newbie</strong>
+                </li>
+              </ul>
+            </li>
+            <li>Connecting as an IPv6 Client with the GoGo6 Client
+              <ul>
+                <li>IPv6 over UDP over IPv4</li>
+                <li>Conenct to a Web server as a client over IPv6</li>
+                <li>
+                  Become an IPv6 <strong style="color: #FFD800;">Explorer</strong>
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </section>
+
+        <!-- Slide 34 Hurricane Electric IPv6 Certification (part 1)-->
+        <section>
+          <h2>Hurricane Electric IPv6 Certification (part 1)</h2>
+          <ul>
+            <li>IPv6 Web Server
+              <ul>
+                <li>You need to buy a domain name from GoDaddy(,17)</li>
+                <li>Apache will NOT work on Windows -- use IIS instead</li>
+                <li>DNS: Creating a AAAA recrod</li>
+                <li>
+                  Becoming an IPv6 <strong style="color: #FFD800;">Enthuisiast</strong>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 35 Hurricane Electric IPv6 Certification (part 1)-->
+        <section>
+          <h2>Hurricane Electric IPv6 Certification (part 1)</h2>
+          <ul>
+            <li>IPv6 Email Server
+              <ul>
+                <li>Use the Apache james Java SMTP server</li>
+                <li>Adding an MX Record to your DNS Zone</li>
+                <li>Installing the Thunderbird Email Client</li>
+                <li>Becoming an IPv6 <strong style="color: #FFD800;">Administartor</strong></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 36 Hurricane Electric IPv6 Certification (Part 2)-->
+        <section>
+          <h2>Hurricane Electric IPv6 Certification (Part 2)</h2>
+          <ul>
+            <li>DNS Configurations
+              <ul>
+                <li>Reverse DNS Servers</li>
+                <li>Routing Advertisements
+                  <ul>
+                    <li>Getting your own public Ipv6 address block</li>
+                  </ul>
+                </li>
+                <li>Forward DNS Zone at Hurricane Electric</li>
+                <li>Reverse DNS Zone at Hurricane Electric</li>
+                <li>Authoritative DNS Servers</li>
+                <li>Passing the Reverse DNS Test</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 37 Hurricane Electric IPv6 Certification (Part 2)-->
+        <section>
+          <h2>Hurricane Electric IPv6 Certification (Part 2)</h2>
+          <ul>
+            <li>
+              Becoming an IPv6 <strong>Professional</strong>
+            </li>
+            <li>
+              Becoming an IPv6 <strong>Guru</strong>
+            </li>
+            <li>
+              Becoming an IPv6 <strong>Sage</strong>
+              <ul>
+                <li>Get the T-Shirt</li>
+                <li>Fame, Fortune, Glory</li>
+              </ul>
+            </li>
+          </ul>
+          <img src="../L1-Motivation3/assets/images/Picture14.png" alt="image of IPv6 certification from Hurricane Electric">
+        </section>
+
+        <!-- Slide 38 The Hardest Part-->
+        <section>
+          <h2>The Hardest Part</h2>
+          <ul>
+            <li>You need to make <strong>THREE</strong> accounts
+              <ul>
+                <li>Hurricane Electric</li>
+                <li>Gogo6</li>
+                <li>Freenet6</li>
+              </ul>
+            </li>
+            <li>Each one has a name and passowrd you need to write down</li>
+          </ul>
+          <p style="font-weight: 700;">Good Luck!</p>
+          <img src="../L1-Motivation3/assets/images/Picture21.gif" alt="Special Agent Dale Cooper giving a thumbs up" style="width: 397px; height: auto;">
+        </section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'none', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
