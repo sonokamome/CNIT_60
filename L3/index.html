@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>L3</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Sam Bowne">
+		<meta name="transcriber" content="Sonokamome">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		
+		<!-- Last minute style additions by Sonokamome -->
+		<style>
+			body > div > div.slides > section.has-dark-background.present > table > tbody > tr > td{
+				text-align: center;
+			}
+
+      /* A small animation for slide 3 */
+      .colorCycle{
+        animation-name: homeCycle; 
+        animation-duration:1.15s; 
+        animation-direction:alternate; 
+        animation-iteration-count:infinite; 
+      }
+
+      @keyframes homeCycle 
+      {
+      25% {color:#fff;} 
+      50% {color:#FF0000;} 
+      75% {color:#fff;}
+      } 
+		</style>
+		
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+			
+				<!-- Slide 1 Binary Lesson 1 Nybbles-->
+				<section data-background="#FF6A00">
+					<h2>Summary of Certification Process (part 1)</h2>
+					<p>Sam Bowne</p>
+					<p>City College of San Francisco</p>
+				</section>
+				
+        <!-- Slide 2 IPv6 Client-->
+        <section>
+          <h2>IPv6 CLient</h2>
+          <img src="../L3/assets/images/Picture1.png" alt="gogoCLIENT Utility">
+          <img src="../L3/assets/images/Picture2.png" alt="Diagram of user connecting to the internet with IPv6 packets being wrapped inside IPv4 packets">
+        </section>
+
+        <!-- Slide 3 Test IPv6 Tunnel-->
+        <section>
+          <h2>Test IPv6 Tunnel</h2>
+          <img src="../L3/assets/images/Picture3.png" alt="screenshot of pinging ipv6.google.com">
+        </section>
+
+        <!-- Slide 4 Register a Domain Name-->
+        <section>
+          <h2>Register a Domain Name</h2>
+          <ul>
+            <li>Domain registrar
+              <ul>
+                <li>Registers whois info</li>
+                <li>Assigns authoritative DNS server</li>
+                <li>Puts "glue records" at the top-level domain (.info, .com, etc) with A and AAAA records of your nameservers</li>
+              </ul>
+            </li>
+          </ul>
+          <img src="../L3/assets/images/Picture4.png" alt="screenshot snippet of Go Daddy website">
+        </section>
+
+        <!-- Slide 5 Set DNS Records-->
+        <section>
+          <h2>Set DNS Records</h2>
+          <img src="../L3/assets/images/Picture5.png" alt="screenshot for setting up DNS records">
+        </section>
+
+        <!-- Slide 6 Test DNS Resolution-->
+        <section>
+          <h2>Test DNS Resolution</h2>
+          <img src="../L3/assets/images/Picture6.png" alt="screenshot for nslookup command in Windows CMD for IPv6 nameserver DNS resolution testing">
+        </section>
+
+        <!-- Slide 7 IPv6 Web Server-->
+        <section>
+          <h2>IPv6 Web Server</h2>
+          <img src="../L3/assets/images/Picture7.png" alt="IPv6 Web Server environement at work">
+        </section>
+
+        <!-- Slide 8 IPv6 Email Server-->
+        <section>
+          <h2>IPv6 Email Server</h2>
+          <img src="../L3/assets/images/Picture8.png" alt="image diagram of IPv6 Email Server at work">
+        </section>
+
+        <!-- Slide 9 Chapter 3-->
+        <section>
+          <h1>Chapter 3</h1>
+        </section>
+
+        <!-- Slide 10 3.3 IPv6 Header-->
+        <section>
+          <h2>3.3 IPv6 Header</h2>
+          <img src="../L3/assets/images/Picture9.png" alt="IPv6 Header format">
+          <ul>
+            <li>Traffic Class: same as TOS in IPv4</li>
+            <li>Flow Label: used for QoS</li>
+            <li>Next header: can start a chain of headers</li>
+          </ul>
+        </section>
+
+        <!-- Slide 11 Image of screenshot image of wireshark detecting -->
+        <section>
+          <img src="../L3/assets/images/Picture10.png" alt="image of screenshot image of wireshark detecting">
+        </section>
+
+        <!-- Slide 12 IPv6 Extension Headers-->
+        <section>
+          <h2>IPv6 Extension Headers</h2>
+          <img src="../L3/assets/images/Picture11.png" alt="image diagram of IPv6 header">
+          <ul>
+            <li>Extension headers are only examined by the destination node
+              <ul>
+                <li>Expect for the rarely-used Hop-by-Hop</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 13 Image diagram of IPv6 header packet format-->
+        <section>
+          <img src="../L3/assets/images/Picture12.png" alt="diagram of IPv6 header packet format">
+        </section>
+
+        <!-- Slide 14 Most Important Extension Headers-->
+        <section>
+          <h2>Most Important Extension Headers</h2>
+          <ul>
+            <li>TCP, UDP, ICMP6
+              <ul>
+                <li>Specify the higher-layer protocol</li>
+              </ul>
+            </li>
+            <li>AH and ESP
+              <ul>
+                <li>used for IPsec security</li>
+              </ul>
+            </li>
+            <li>Mobility
+              <ul>
+                <li>Used for Mobile IPv6</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 15 Image of table showing IPv6 extension headers and upper layer Protocols-->
+        <section>
+          <img src="../L3/assets/images/Picture13.png" alt="Image of table showing IPv6 extension headers and upper layer Protocols">
+        </section>
+
+        <!-- Slide 16 Routing header Zero-->
+        <section>
+          <h2>Routing header Zero</h2>
+          <ul>
+            <li>Deprecated, and recommended to be filtered out
+              <ul>
+                <li>http://www.ietf.org/rfc/5095.txt</li>
+              </ul>
+            </li>
+            <li>A denial-of-service condition is possible by specifying a malicious path, such as a loop</li>
+          </ul>
+        </section>
+
+        <!-- Slide 17 ICMPv6-->
+        <section>
+          <h2>ICMPv6</h2>
+          <img src="../L3/assets/images/Picture14.png" alt="ICMPv6 format" style="width: 485px; height: auto;">
+          <img src="../L3/assets/images/Picture15.png" alt="ICMPv6 format table breakdown" style="width: 525px; height: auto;">
+        </section>
+
+        <!-- Slide 18 Image ICMPv6 table breakdown-->
+        <section>
+          <img src="../L3/assets/images/Picture16.png" alt="ICMPv6 table breakdown">
+        </section>
+
+        <!-- Slide 19 3.5.3 neighbor Discovery-->
+        <section>
+          <h2>3.5.3 neighbor Discovery</h2>
+          <ul>
+            <li>Main Uses
+              <ul>
+                <li>Autoconfiguration of IPv6</li>
+                <li>Duplicate Address Detection (DAD)</li>
+                <li>Address Resolution (replacing ARP)</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 20 Router Advertisement-->
+        <section>
+          <h2>Router Advertisement</h2>
+          <ul>
+            <li>Router Solicititation (RS)
+              <ul>
+                <li>Sent by an interface when it is enabled and needs an IP address</li>
+              </ul>
+            </li>
+            <li>Router Advertisement(RA)
+              <ul>
+                <li>Routers send these messages out, telling clients the network prefix and other configuration information</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 21 Neighbor Solicitation-->
+        <section>
+          <h2>Neighbor Solicitation</h2>
+          <ul>
+            <li>Neighbor Solicitation (NS)
+              <ul>
+                <li>A node sends this message to verify that a neighbor is still reachable, or for Duplicate Address Detection (DAD)</li>
+              </ul>
+            </li>
+            <li>Neighbor Advertisement (NA)
+              <ul>
+                <li>The response to a NS message</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 22 Image "Solicited Node Multicast Address"-->
+        <section>
+          <h2>Solicited Node Multicast Address</h2>
+          <img src="../L3/assets/images/Picture17.png" alt="Soliciated Node Multicast Address" style="width: 460px; height: auto;">
+          <ul>
+            <li>"Soliciated Node Multicast Address" (see p.3-27)</li>
+          </ul>
+        </section>
+
+        <!-- Slide 23 3.5.4 Autoconfiguration -->
+        <section>
+          <h2>3.5.4 Autoconfiguration </h2>
+          <ul>
+            <li>Automatic addressing via two mechanisms
+              <ul>
+                <li>Stateless Autoconfiguration (SLAAAC)
+                  <ul>
+                    <li>No server needed</li>
+                    <li>Routers advertise network portions</li>
+                    <li>Hosts make up their own host portions</li>
+                  </ul>
+                </li>
+                <li>Stateful Autoconfiguration (DHCPv6)
+                  <ul>
+                    <li>Requires a DHCP server</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 24 3.5.6 path Maximum Transmission Unit (PMTU) Discovery-->
+        <section>
+          <h2>3.5.6 path Maximum Transmission Unit (PMTU) Discovery</h2>
+          <ul>
+            <li>IPv4 allows each router to fragment packets if needed to pass into a network with a small MTU</li>
+            <li>In IPv6, only the sender can change the packet size
+              <ul>
+                <li>this makes the process much more efficient</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 25 Path Maximum Transmission Unit (PMTU) Discovery-->
+        <section>
+          <h2>Path Maximum Transmission Unit (PMTU) Discovery</h2>
+          <ul>
+            <li>ICMPv6 "Packet Too Big" messages are sent to inform the source device to use smaller packets</li>
+          </ul>
+          <img src="../L3/assets/images/Picture18.png" alt="image diagram of PMTU at work">
+        </section>
+
+
+				
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'none', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
