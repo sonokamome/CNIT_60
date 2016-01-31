@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>L4</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Sam Bowne">
+		<meta name="transcriber" content="Sonokamome">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		
+		<!-- Last minute style additions by Sonokamome -->
+		<style>
+			body > div > div.slides > section.has-dark-background.present > table > tbody > tr > td{
+				text-align: center;
+			}
+
+      /* A small animation for slide 3 */
+      .colorCycle{
+        animation-name: homeCycle; 
+        animation-duration:1.15s; 
+        animation-direction:alternate; 
+        animation-iteration-count:infinite; 
+      }
+
+      @keyframes homeCycle 
+      {
+      25% {color:#fff;} 
+      50% {color:#FF0000;} 
+      75% {color:#fff;}
+      } 
+		</style>
+		
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+			
+				<!-- Slide 1 New Projects-->
+				<section data-background="#FF6A00">
+					<h2>New Projects</h2>
+					<img src="../L4/assets/images/Picture1.png" alt="Windows IPv6 assignments in samsclass.info">
+          <p>Sam Bowne</p>
+					<p>City College of San Francisco</p>
+				</section>
+				
+        <!-- Slide 2 Viewing RA Packets With Wireshark-->
+        <section>
+          <h2>Viewing RA Packets With Wireshark</h2>
+        </section>
+
+        <!-- Slide 3 GOGO6 Tunnel with Router Advertisements-->
+        <section>
+          <h2>GOGO6 Tunnel with Router Advertisements</h2>
+          <img src="../L4/assets/images/Picture2.png" alt="Diagram showing setup with GOGO6 Tunnel client" style="width: 680px; height: auto; background-color: #ffffff;">
+        </section>
+
+        <!-- Slide 4 SLAAC (Stateless Address Autoconfiguration)-->
+        <section>
+          <h2>SLAAC (Stateless Address Autoconfiguration)</h2>
+          <img src="../L4/assets/images/Picture3.png" alt="Image diagram of SLAAC in action" style="width: 680px; height: auto; background-color: #ffffff;">
+          <ul>
+            <li>RA packet specified first 64 bits of address &#x00026; gateway address</li>
+            <li>Host generates the last 64 bits</li>
+          </ul>
+        </section>
+
+        <!-- Slide 5 Router Advertisement (RA)-->
+        <section>
+          <h2>Router Advertisement (RA)</h2>
+          <img src="../L4/assets/images/Picture4.png" alt="screenshot of Broadcom NetXtreme Gigabit packet capture by Wireshark">
+        </section>
+
+        <!-- Slide 6 Ubuntu Linux 10.10 SLAAC Works Properly-->
+        <section>
+          <h2>Ubuntu Linux 10.10 SLAAC Works Properly</h2>
+          <img src="../L4/assets/images/Picture5.png" alt="screenshot of Ubuntu Linux 10.10 SLAAC Working properly">
+        </section>
+
+        <!-- Slide 7 BackTrack 4 R2 Linux Requires Manual Configuration-->
+        <section>
+          <h2>BackTrack 4 R2 Linux Requires Manual Configuration</h2>
+          <img src="../L4/assets/images/Picture6.png" alt="BackTrack 4 R2 Linux Requires Manual Configuration">
+        </section>
+
+        <!-- Slide 8 Scanning a LAN-->
+        <section>
+          <h2>Scanning a LAN</h2>
+          <img src="../L4/assets/images/Picture7.png" alt="Scanning a Lan via ./alive6">
+        </section>
+
+        <!-- Slide 9 IPv4-to-IPv6 Reverse Proxy-->
+        <section>
+          <h2>IPv4-to-IPv6 Reverse Proxy</h2>
+          <img src="../L4/assets/images/Picture8.png" alt="IPv4-to-IPv6 Reverse Proxy" style="background-color: #ffffff; width: 770px; height: auto;">
+        </section>
+
+        <!-- Slide 10 haproxy-->
+        <section>
+          <h2>haproxy</h2>
+          <ul>
+            <li>Linux proxya nd load-balancer</li>
+            <li>This configuration listens on IPv6 for clients and proxies to IPv4</li>
+          </ul>
+          <img src="../L4/assets/images/Picture9.png" alt="haproxy screenshot">
+        </section>
+
+        <!-- Slide 11 Proxy Listening on IPv6-->
+        <section>
+          <h2>Proxy Listening on IPv6</h2>
+          <img src="../L4/assets/images/Picture10.png" alt=" Proxy Listening on IPv6" style="width: 900px; height: 220px;">
+          <ul>
+            <li>Port 80 for HTTP</li>
+            <li>Port 442 for HTTPS</li>
+          </ul>
+        </section>
+
+        <!-- Slide 12 Proxy in Action-->
+        <section>
+          <h2>Proxy in Action</h2>
+          <ul>
+            <li>Put the IPv6 address in the browser</li>
+            <li>Press Enter</li>
+            <li>CCSF Web pages opens</li>
+          </ul>
+          <br>
+          <img src="../L4/assets/images/Picture11.png" alt="[2001:5c0:1000:b::9031 address accessing]">
+          <span style="display: block;">and then</span>
+          <img src="../L4/assets/images/Picture12.png" alt="CCSF resolving after entering IPv6 address 2001:5c0:1000:b::9031">
+        </section>
+
+        <!-- Slide 13 Not an Ipv4 Connection-->
+        <section>
+          <h2>Not an Ipv4 Connection</h2>
+          <img src="../L4/assets/images/Picture13.png" alt="Not an Ipv4 Connection">
+        </section>
+
+        <!-- Slide 14 Ch 4: IPv6 Advanced Topics-->
+        <section>
+          <h2>Ch 4: IPv6 Advanced Topics</h2>
+        </section>
+
+        <!-- Slide 15 Topics-->
+        <section>
+          <h2>Topics</h2>
+          <ul>
+            <li>Multihoming</li>
+            <li>Multicast</li>
+            <li>QoS</li>
+            <li>Mobile Ipv6</li>
+            <li>Jumbograms</li>
+            <li>DHCP</li>
+            <li>Prefix renumbering</li>
+          </ul>
+        </section>
+
+        <!-- Slide 16 4.1: Multihoming-->
+        <section>
+          <h2>4.1: Multihoming</h2>
+          <ul>
+            <li>Multiple addresses on the same node</li>
+            <li>Advantages:
+              <ul>
+                <li>Multiple paths to the Internet for fault-tolerance or load-balancing</li>
+                <li>QoS differentiation</li>
+                <li>Security policy enforcement</li>
+              </ul>
+            </li>
+            <li>Costs:
+              <ul>
+                <li>Either the Internet backbone needs multiple routes to the host, or</li>
+                <li>The node must sort out the traffic</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 17 Provider-Independent Addresses-->
+        <section>
+          <h2>Provider-Independent Addresses</h2>
+          <ul>
+            <li>IP addresses don't change when you change ISPs</li>
+            <li>Easiest for end users to manage</li>
+            <li>Fragments and increaes the Internet backbone routing tables</li>
+            <li>ARIN will give qualifying companies a /48, privder-independent</li>
+          </ul>
+        </section>
+
+        <!-- Slide 18 Growth of the BGP - 1994 to Present-->
+        <section>
+          <h2>Growth of the BGP <br> 1994 to Present</h2>
+          <img src="../L4/assets/images/Picture14.png" alt="Growth of the BGP - 1994 to Present" style="width: 537px; height: auto;">
+          <br>
+          <ul>
+            <li>link Ch4a</li>
+          </ul>
+        </section>
+
+        <!-- Slide 19 Live BGP Updates-->
+        <section>
+          <h2>Live BGP Updates</h2>
+          <img src="../L4/assets/images/Picture15.png" alt="Live BGP Updates">
+          <br>
+          <ul>
+            <li>Link Ch 4b</li>
+          </ul>
+        </section>
+
+        <!-- Slide 20 Hurricane Electric The whole IPv6 BGP table-->
+        <section>
+          <img src="../L4/assets/images/Picture16.png" alt="Hurricane Electric The whole IPv6 BGP table">
+          <ul>
+            <li>Ipv6 BGP table has 2000 routes at present, but it is growing</li>
+            <li>Link Ch 4c</li>
+          </ul>
+        </section>
+
+        <!-- Slide 21 Site Multihoming by IPv6 Intermediation (SHIM6) Specification-->
+        <section>
+          <h2>Site Multihoming by IPv6 Intermediation (SHIM6) Specification</h2>
+          <ul>
+            <li>A way to limit IPv6 BGP table growth</li>
+            <li>Splits layer 3 into sublayers</li>
+          </ul>
+          <img src="../L4/assets/images/Picture17.png" alt="Site Multihoming by IPv6 Intermediation (SHIM6) Specification">
+        </section>
+
+        <!-- Slide 22 4.2: IPv6 Multicast-->
+        <section>
+          <h2>4.2: IPv6 Multicast</h2>
+          <ul>
+            <li>IPv4 Broadcast packets are ready by every node that receives them</li>
+            <li>Multicast packets are only read by nodes that have subscribed to that multicast group</li>
+          </ul>
+        </section>
+
+        <!-- Slide 23 Multicast Advantages-->
+        <section>
+          <h2>Multicast Advantages</h2>
+          <ul>
+            <li>Sender only sends to ccreate one packet for many receivers</li>
+            <li>Less bandwidth consumption</li>
+            <li>Sender doesnt' need to know or remember how many listeners there are</li>
+            <li>Typical uses: streaming audio or video, router updates, Ghosting hard drives</li>
+          </ul>
+        </section>
+
+        <!-- Slide 24 ARP Brodacasting in IPv4-->
+        <section>
+          <h2>ARP Brodacasting in IPv4</h2>
+          <img src="../L4/assets/images/Picture18.png" alt="ARP Broadcating in IPv4" style="background-color: #ffffff;">  
+        </section>
+
+        <!-- Slide 25 Neighbor Discovery in IPv6-->
+        <section>
+          <h2>Neighbor Discovery in IPv6</h2>
+          <img src="../L4/assets/images/Picture19.png" alt="Neighbor Discovery in IPv6" style="background-color: #ffffff; width: 630px; height: auto;">
+        </section>
+
+        <!-- Slide 26 Well-Know Multicast Addresses-->
+        <section>
+          <h2>Well-Know Multicast Addresses</h2>
+          <ul>
+            <li>Link-local scope
+              <ul>
+                <li><code style="color:#FFD800;">FF02::1</code> &#x000A0; All Nodes</li>
+                <li><code style="color:#FFD800;">FF02::2</code> &#x000A0; All Routers</li>
+                <li><code style="color:#FFD800;">FF02::1:2</code> &#x000A0; All DCHP Agetns</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 27 Multicast Listener Discovery (MLD)-->
+        <section>
+          <h2>Multicast Listener Discovery (MLD)</h2>
+          <ul>
+            <li>A protocol used by interfaces to join and leave multicast groups</li>
+            <li>Routers keep track of these groups for each itnerface onw hcih they forward packets</li>
+            <li>Uses Multicast Listner Query and</li>
+            <li>Multicast Listener Report packets</li>
+          </ul>
+        </section>
+
+        <!-- Slide 28 Multicast Address format-->
+        <section>
+          <h2>Multicast Address format</h2>
+          <img src="../L4/assets/images/Picture20.png" alt="Multicast Address format">
+          <ul>
+            <li>Always starts with FF</li>
+            <li>Flags are 0 for well-knwon addresses</li>
+          </ul>
+        </section>
+
+        <!-- Slide 29 Scope Bits-->
+        <section>
+          <h2>Scope Bits</h2>
+          <img src="../L4/assets/images/Picture21.png" alt="Scope Bits">
+          <img src="../L4/assets/images/Picture22.png" alt="Scope Bits 2">
+        </section>
+
+        <!-- Slide 30 Demonstration-->
+        <section>
+          <h2>Demonstration</h2>
+          <ul>
+            <li>Using IPCONFIG to find the Interface ID in Windows 7 (%12)</li>
+            <li>IPv6 address ends in b225</li>
+          </ul>
+          <img src="../L4/assets/images/Picture23.png" alt="Demonstration">
+        </section>
+
+        <!-- Slide 31 Demonstration-->
+        <section>
+          <h2>Demonstration</h2>
+          <ul>
+            <li>Sniff on the correct adapter in Wireshark</li>
+            <li>IPv6 address ends in b225</li>
+          </ul>
+          <img src="../L4/assets/images/Picture24.png" alt="Demonstration2">
+        </section>
+
+        <!-- Slide 32 Ping Local Interface ff01::1-->
+        <section>
+          <h2>Ping Local Interface ff01::1</h2>
+          <img src="../L4/assets/images/Picture25.png" alt="Ping Local Interface ff01::1">
+        </section>
+
+        <!-- Slide 33 Ping Link-Local Interface ff02::1-->
+        <section>
+          <h2>Ping Link-Local Interface ff02::1</h2>
+          <img src="../L4/assets/images/Picture26.png" alt="Ping Link-Local Interface ff02::1">
+        </section>
+
+        <!-- Slide 34 4.3 IPv6 Quality of Service (QoS)-->
+        <section>
+          <h2>4.3 IPv6 Quality of Service (QoS)</h2>
+          <ul>
+            <li>QoS includes several techniques to adjust performance for different types of traffic</li>
+            <li>Streaming media need low latency but can tolerate some packet loss</li>
+            <li>File transfer can tolerate latency but not packet loss</li>
+          </ul>
+        </section>
+
+        <!-- Slide 35 IPv6 Adtvantages For QoS (not fully implemented yet)-->
+        <section>
+          <h2>IPv6 Adtvantages For QoS <br> (not fully implemented yet)</h2>
+          <ul>
+            <li>End-to-end addressing; no need for NAT</li>
+            <li>Simpler header</li>
+            <li>Larger packet sizes</li>
+            <li>No in-route fragmentation</li>
+            <li>No broadcast &#x00026; mroe efficient multicast</li>
+            <li>A new Flow Label field and larter Traffic Class field in the main IPv6 header</li>
+          </ul>
+        </section>
+
+        <!-- Slide 36 4.4 Mobile IPv6 (MIPv6)-->
+        <section>
+          <h2>4.4 Mobile IPv6 (MIPv6)</h2>
+          <img src="../L4/assets/images/Picture27.png" alt="4.4 Mobile IPv6 (MIPv6)">
+        </section>
+
+        <!-- Slide 37 MIPv6 Tems-->
+        <section>
+          <h2>MIPv6 Tems</h2>
+          <ul>
+            <li><strong>Mobile Node (MN)</strong>. A node using MIPv6 to change its point of network attachment</li>
+            <li><strong>Home Address (HoA)</strong>. The permanent, routable unicast addres sof the MN</li>
+            <li><strong>Home Link</strong>. The link oon which the MN's HoA is defined</li>
+            <li><strong>Foreign Link</strong>. Any link except the home link</li>
+            <li><strong>Care-Of Address (CoA)</strong>. A routable unicast address used by the MN on a foreign link</li>
+            <li><strong>Correspondent Node (CN)</strong>. a peer which the MN is communicating</li>
+          </ul>
+        </section>
+
+        <!-- Slide 38 More MiPv6 Terms-->
+        <section>
+          <h2>More MiPv6 Terms</h2>
+          <ul>
+            <li><strong>Home Agent (HA)</strong>. A router on the MN's Home Link with which the MN register its CoA and which forwards traffic to and from the MN and its CoA</li>
+            <li><strong>Route optimization</strong>. Direct communications between a MN and CN without involving a HA</li>
+          </ul>
+        </section>
+
+        <!-- Slide 39 4.5 Jumbograms-->
+        <section>
+          <h2>4.5 Jumbograms</h2>
+          <ul>
+            <li>With an Extension Header, packets larger than 65,536 bytes are allowed</li>
+            <li>Up to 4 GB</li>
+            <li>But they will only become pratical when networks handle packet sizes that big (not yet)</li>
+          </ul>
+        </section>
+
+        <!-- Slide 40 4.6 Address Selection-->
+        <section>
+          <h2>4.6 Address Selection</h2>
+          <ul>
+            <li>IPv6 interfaces have many addresses, so it is not obvious how to select from the available source addresses (or even destination addresses) when sending a packet</li>
+            <li>The selection process is common-sense; use the smallest scope, avoid deprecated addresses, etc</li>
+          </ul>
+        </section>
+
+        <!-- Slide 41 4.7 Dynamic Host Configuration Protocol (DHCP) for IPv6-->
+        <section>
+          <h2>4.7 Dynamic Host Configuration Protocol (DHCP) for IPv6</h2>
+          <ul>
+            <li>SLAAC doesn't deliver DNS server info</li>
+            <li>DHCP is Stateful, and requires a server</li>
+            <li>Three primary configuration options are available for IPv6 interfaces:
+              <ul>
+                <li>1. Use autoconfiguration and not DHCPv6.</li>
+                <li>2. Use DHCPv6 and not autoconfiguration.</li>
+                <li>3. Get an address with autoconfiguration and then use DHCPv6 to retrieve additional information.</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 42 4.8 IPv6 Prefix Renumbering-->
+        <section>
+          <h2>4.8 IPv6 Prefix Renumbering</h2>
+          <ul>
+            <li>When  you change ISPs, you need to update
+              <ul>
+                <li>Manually assigned addresses for interfaces on routers</li>
+                <li>Routing information and link prefixes advertised by routers</li>
+                <li>Addresses on routers, firewalls, and packet filters used for access control or ingress filtering</li>
+                <li>Addresses assigned to interfaces with stateless address autoconfiguration</li>
+                <li>Addresses and other information provide by DHCPv6</li>
+                <li>DNS records (primarily AAA and PTR records, as well as DNSSEC)</li>
+                <li>All other instances of addresses in applications, command sequences, configuration files, and elsewhere</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+
+
+				
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'none', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
