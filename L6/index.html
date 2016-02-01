@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>L6</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Sam Bowne">
+		<meta name="transcriber" content="Sonokamome">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		
+		<!-- Last minute style additions by Sonokamome -->
+		<style>
+			body > div > div.slides > section.has-dark-background.present > table > tbody > tr > td{
+				text-align: center;
+			}
+
+      /* A small animation for slide 3 */
+      .colorCycle{
+        animation-name: homeCycle; 
+        animation-duration:1.15s; 
+        animation-direction:alternate; 
+        animation-iteration-count:infinite; 
+      }
+
+      @keyframes homeCycle 
+      {
+      25% {color:#fff;} 
+      50% {color:#FF0000;} 
+      75% {color:#fff;}
+      } 
+		</style>
+		
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+			
+				<!-- Slide 1 New Projects-->
+				<section data-background="#FF6A00">
+					<h2>Ch 6: IPv6 Deployment</h2>
+          <p>Sam Bowne</p>
+					<p>City College of San Francisco</p>
+				</section>
+
+        <!-- Slide 2 Topics-->
+        <section>
+          <h2>Topics</h2>
+          <ul>
+            <li>6.3 Transition Mechnisms</li>
+            <li>6.4 Dual stac Ipv4/Ipv6 Environments</li>
+            <li>6.5 Tunneling</li>
+          </ul>
+        </section>
+
+        <!-- Slide 3 6.3 Transition Mechanisms-->
+        <section>
+          <h2>6.3 Transition Mechanisms</h2>
+          <ul>
+            <li>IPv6 is not backwards-compatible with IPv4</li>
+            <li>So while both protocols are in use, we need <strong>stransition mechanisms</strong> to connect them</li>
+            <li>Three types of transition mechanisms
+              <ul>
+                <li>Dual Stack</li>
+                <li>Tunneling</li>
+                <li>Translation</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 4 Early Stages-->
+        <section>
+          <h2>Early Stages</h2>
+          <ul>
+            <li>Islands of IPv6 Connected via IPv4</li>
+            <img src="../L6/assets/images/Picture1.png" alt="Early Stages">
+          </ul>
+        </section>
+
+        <!-- Slide 5 Middle Stages-->
+        <section>
+          <h2>Middle Stages</h2>
+          <ul>
+            <li>Core is IPv6 or Dual-Stack
+              <ul>
+                <li>Some tunnels are no longer needed</li>
+                <li>Translation mechanisms will be needed to allow legacy IPv4 devices to access IPv6 services</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 6 Last Stage-->
+        <section>
+          <h2>Last Stage</h2>
+          <ul>
+            <li>Most equipment and services are IPv6-only
+              <ul>
+                <li>Only isolated islands of Ipv4 legacy services remain</li>
+                <li>IPv4 tunnels over Ipv6</li>
+                <li>Translation devices allow IPv6-oonly devicves to access IPv4 services</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 7 6.4 Dual Stack IPv4/IPv6 Environments-->
+        <section>
+          <h2>6.4 Dual Stack IPv4/IPv6 Environments</h2>
+          <img src="../L6/assets/images/Picture2.png" alt="6.4 Dual Stack IPv4/IPv6 Environments">
+          <ul>
+            <li>Each host uses both IPv4 and IPv6</li>
+            <li>Reduces need for tunnels</li>
+          </ul>
+        </section>
+
+        <!-- Slide 8 6.4.1 Deployment of a Dual Stack Environment-->
+        <section>
+          <h2>6.4.1 Deployment of a Dual Stack Environment</h2>
+          <ul>
+            <li>Consider the following issues
+              <ul>
+                <li>Shared infrastructure
+                  <ul>
+                    <li>Must route and switche both IPv4 &#x00026; IPv6</li>
+                  </ul>
+                </li>
+                <li>Need for more resources
+                  <ul>
+                    <li>Details on next slide</li>
+                  </ul>
+                </li>
+                <li>Application protocol preference</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 9 Need for more resources-->
+        <section>
+          <h2>Need for more resources</h2>
+          <ul>
+            <li>Each protocol stack must share the available network bandwidth</li>
+            <li>Routers need to:
+              <ul>
+                <li>Maintain forwarding tables for both IPv4 and IPv6</li>
+                <li>Run routing protocols for both protocols</li>
+                <li>Implement packet filtering for both protocols</li>
+                <li>Provide for congestion control for both protocols</li>
+                <li>Handle special cases (IPv4 Router Alerts and IPv6 Hop-by-Hop Options) for both</li>
+                <li>Forward packets for both protocols</li>
+              </ul>
+            </li>
+            <li>Hosts must devote resources to both protocol stacks ( for example, processing, memory, and network infrastructure traffic)</li>
+            <li>Administrative and security staff must maintain concurrent environments as well</li>
+          </ul>
+        </section>
+
+        <!-- Slide 10 Applications in a Dual-Stack Environment-->
+        <section>
+          <h2>Applications in a Dual-Stack Environment</h2>
+          <ul>
+            <li>Some applications are IPv4-only</li>
+            <li>Some are IPv6-only</li>
+            <li>Some are dual-stack</li>
+            <li>DNS record order can be used to control preference for A or AAAA records on each resource
+              <ul>
+                <li>IPv6 shoud be first when possible (preferred)</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 11 6.4.1 Addressing in a Dual Stack Environment-->
+        <section>
+          <h2>6.4.1 Addressing in a Dual Stack Environment</h2>
+          <ul>
+            <li>If you use static addresses, you must provide both IPv4 and IPv6 addresses</li>
+            <li>If you use DHCP, you msut provide both DHCPv4 and DHCPv6 server</li>
+          </ul>
+        </section>
+
+        <!-- Slide 12 6.4.3 Security Implications of a Dual Stack Environment-->
+        <section>
+          <h2>6.4.3 Security Implications of a Dual Stack Environment</h2>
+          <ul>
+            <li>Each dual-stack node is exposed to the vulnerabilitie sof both IPv4 and IPv6</li>
+            <li>Security Details
+              <ul>
+                <li>Consistent security policy for both Ipv4 &#x00026; IPv6</li>
+                <li>Account for new IPv6 functionality
+                  <ul>
+                    <li>Mobility</li>
+                    <li>Stateless address autoconfiguration</li>
+                    <li>Neighbor discovery</li>
+                    <li>Privacy addresses</li>
+                    <li>End-to-end encryption with IPsec</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 13 Security Details (continued)-->
+        <section>
+          <h2>Security Details (continued)</h2>
+          <ul>
+            <li>Unexpected tunneling between hosts may violate security policies</li>
+            <li>Organizations must upgrade
+              <ul>
+                <li>Intrusion detection or intrusion prevention systems</li>
+                <li>Firewalls</li>
+                <li>Monitoring, logging, and auditing</li>
+              </ul>
+            </li>
+            <li>To provide IPv6 protection equivalent to what is available for IPv4</li>
+          </ul>
+        </section>
+
+        <!-- Slide 14 Security Details (continued)-->
+        <section>
+          <h2>Security Details (continued)</h2>
+          <ul>
+            <li>If utnneled packets are allowed to enter the network, the firewall or IDS/IPS system must be able to perform deep packets inspection.</li>
+            <li>The performance of security systems may degrade when handling IPv6 (when using the same resources compared to IPv4)</li>
+          </ul>
+        </section>
+
+        <!-- Slide 15 6.5 Tunneling-->
+        <section>
+          <h2>6.5 Tunneling</h2>
+          <img src="../L6/assets/images/Picture3.png" alt="6.5 Tunneling">
+        </section>
+
+        <!-- Slide 16 Configured v. Automatic Tunnels-->
+        <section>
+          <h2>Configured v. Automatic Tunnels</h2>
+          <ul>
+            <li>
+              <em>Configured tunnels</em>
+              <ul>
+                <li>Require system administrators to configure the endpoints of the tunnel</li>
+              </ul>
+            </li>
+            <li>
+              <em>Automatic tunnels</em>
+              <ul>
+                <li>The nodes configured the endpoints themselves</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 17 Tunnels Bypassing Firewalls-->
+        <section>
+          <h2>Tunnels Bypassing Firewalls</h2>
+          <img src="../L6/assets/images/Picture4.png" alt="Tunnels Bypassing Firewalls">
+        </section>
+
+        <!-- Slide 18 Automatic Tunneling Mechanisms-->
+        <section>
+          <h2>Automatic Tunneling Mechanisms</h2>
+          <ul>
+            <li><strong>6over4</strong> &#x02014; requires IPv4 multicast, rarely used</li>
+            <li><strong>6to4</strong> and <strong>6rd</strong> &#x02014; requires public IPv4 addresses, widely implemented</li>
+            <li><strong>ISATAP</strong> &#x02014; does not work across NAT</li>
+            <li><strong>Teredo</strong> &#x02014; UDP encapsulation intended for tunneling through IPv4 NATs</li>
+          </ul>
+        </section>
+
+        <!-- Slide 19 6.5.4 6over4 Protocol-->
+        <section>
+          <h2>6.5.4 6over4 Protocol</h2>
+          <ul>
+            <li>Old and simple</li>
+            <li>Relies on IPv4 multicast</li>
+            <li>Has not been widely deployed</li>
+            <li>Hosts use their IPv4 address as an Interface ID</li>
+          </ul>
+        </section>
+
+        <!-- Slide 20 6over4 Example-->
+        <section>
+          <h2>6over4 Example</h2>
+          <ul>
+            <li>Network: 2001:5c0:1000:b::/64</li>
+            <li>Gateway: 2001:5c0:1000:b::1</li>
+            <li>Host Addresses:
+              <ul>
+                <li>IPv4 (dotted-decimal): &#x02002;&#x02002;&#x02002;&#x02002; <span style="text-align: right;"><code style="color: #FFD800;">192.168.1.101</code></span></li>
+                <li>IPv4 (hex): &#x02002;&#x02002;&#x02002;&#x02002;&#x02002;&#x02002;&#x02002;&#x02002;&#x02002;&#x02002;&#x02002;&#x02002;&#x02002;&#x02002;&#x02002;&#x02002;&#x02002;&#x02002;<span style="text-align: right;"><code style="color: #FFD800;">C0.a8.1.65</code></span></li>
+                <li>Public IPv6: &#x02002;<span style="text-align: right;"><code style="color: #FFD800;">2001:5C0:1000:b::C0A8:165</code></span></li>
+                <li>Link-Local IPv6: &#x02002;&#x02002;&#x02002;&#x02002;&#x02002;&#x02002;&#x02002;&#x02002;&#x02002;<span style="text-align: right;"><code style="color: #FFD800;">fe80::C0A8:165</code></span></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 21 6.5.5 6to4 and 6rd Protocols-->
+        <section>
+          <h2>6.5.5 6to4 and 6rd Protocols</h2>
+          <ul>
+            <li><strong>6to4</strong>
+              <ul>
+                <li>Allows IPv6 sites to coonnect to one another over an IPv4 network</li>
+                <li>IPv4 address is embedded in IPv6 prefix</li>
+                <li>Useful when your ISP does not offer an IPv6 prefix</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 22 6rd (Rapid Deployment)-->
+        <section>
+          <h2>6rd (Rapid Deployment)</h2>
+          <ul>
+            <li>Allows IPv4 IPSs to offer Ipv6 to customers quickly and easily</li>
+            <li>Uses the same system as to 6to4, but with the provider's IPv6 prefix</li>
+          </ul>
+        </section>
+
+        <!-- Slide 23 6.5.5 Using 6to4 and 6rd-->
+        <section>
+          <h2>6.5.5 Using 6to4 and 6rd</h2>
+          <ul>
+            <li>Each to 6to4 border router needs a public IPv4 address: w.x.y.z</li>
+            <li>The IPv6 network conencted to that router uses the Ipv6 prefix 2002:w.x.y.z/48
+              <ul>
+                <li>Example: CCSF uses: 147.144.0.1</li>
+                <li>In hexadecimal: 93.90.0.1</li>
+                <li>Our 6to4 IPv6 prefix is: 2002: 9390:1::/48</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 24 6to4 Relays-->
+        <section>
+          <h2>6to4 Relays</h2>
+          <ul>
+            <li>Each 6to4 domain must have at least one relay router</li>
+            <li>Relay outer has an an (IPv4) anycast address: 192.88.99.1</li>
+          </ul>
+        </section>
+
+        <!-- Slide 25 6to4 image diagram-->
+        <section>
+          <img src="../L6/assets/images/Picture5.png" alt="6to4 image diagram">
+        </section>
+
+        <!-- Slide 26 6.5.6 Intra-Site Automatic Tunnel Addressing Protocol (ISATAP)-->
+        <section>
+          <h2>6.5.6 Intra-Site Automatic Tunnel Addressing Protocol (ISATAP)</h2>
+          <ul>
+            <li>ISATAP allows isolated IPv6 hosts within a site running IPv4 to construct an automatic IPv6-in-IPv4 tunnel</li>
+            <li>Does not use IPv4 multicast, as required with 6over4</li>
+            <li>All hosts using ISATAP must be dual stack IPv4/IPv6</li>
+            <li>ISATAP hosts communicate by tunnelign IPv6 packets over IPv4 using protocol 41</li>
+          </ul>
+        </section>
+
+        <!-- Slide 27 IPv4 Packet Header-->
+        <section>
+          <h2>IPv4 Packet Header</h2>
+          <img src="../L6/assets/images/Picture6.png" alt="IPv4 Packet Header">
+        </section>
+
+        <!-- Slide 28 Protocol Numbers-->
+        <section>
+          <h2>Protocol Numbers</h2>
+          <ul>
+            <li>6 &#x02014; TCP</li>
+            <li>17 &#x02014; UDP</li>
+            <li>41 &#x02014; IPv6 (encapsulation)</li>
+          </ul>
+        </section>
+
+        <!-- Slide 29 Protocol 41 is Blocked by Most Home Routers-->
+        <section>
+          <h2>Protocol 41 is Blocked by Most Home Routers</h2>
+          <img src="../L6/assets/images/Picture7.png" alt="Protocol 41 is Blocked by Most Home Routers" style="width: 740px; height: 310px;">
+        </section>
+
+        <!-- Slide 30 ISATAP Addresses-->
+        <section>
+          <h2>ISATAP Addresses</h2>
+          <ul>
+            <li>A host with an IPv4 address w.x.y.z performs autoconfiguration with interface ID = ::0:5EFE:w.x.y.z</li>
+          </ul>
+        </section>
+
+        <!-- Slide 31 Image diagram ISATAP addresses -->
+        <section>
+        <img src="../L6/assets/images/Picture8.png" alt="Image diagram ISATAP addresses">
+        </section>
+
+        <!-- Slide 32 ISATAP Limitations-->
+        <section>
+          <h2>ISATAP Limitations</h2>
+          <ul>
+            <li>All IPv6 hosts run dual stack IPv4/IPv6 with support for ISATAP</li>
+            <li>Each ISATAP hosst must know at leaston dual stack IPv4/Ipv6 router</li>
+            <li>All traffic is constrainted to a single administrative domain</li>
+            <li>There is no need for IPv4 NAT traversal</li>
+          </ul>
+        </section>
+
+        <!-- Slide 33 6.5.7 Terado Protocol-->
+        <section>
+          <h2>6.5.7 Terado Protocol</h2>
+          <ul>
+            <li>Tunneling IPv6 over UDP through Network Address Translations (NATs)</li>
+            <li>Develoepd by Microsoft</li>
+            <li>has a high overhead</li>
+            <li>Detects NAT, then starts with a UDP packet sent from the NAT</li>
+            <li>A teredo server listens to UDP port 3544</li>
+          </ul>
+        </section>
+
+        <!-- Slide 34 Teredo Addresses-->
+        <section>
+          <h2>Teredo Addresses</h2>
+          <ul>
+            <li>IPv6 addresses for Teredo clients are comprised of the following five parts:
+              <ul>
+                <li><strong>Prefix</strong>: the 32-bit Teredo service prefix 2001:0000::/32</li>
+                <li><strong>Server Ipv4</strong>: the 32-bit Ipv4 address of a Teredo server</li>
+                <li><strong>Flags</strong>: 16 bits set of 8000 for cone NATs and 0000 otehrwise</li>
+                <li><strong>Port</strong>: The Teredo client's 16-bit UDP port number, inverted bit by bit</li>
+                <li><strong>Client IPv4</strong>: The Taredo client's 32-bit IPv4 address (behind the NAT), inverted bit by bit</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 35 image diagram of Teredo Address format-->
+        <section>
+        <h2>Figure 6-5. Teredo Address</h2>
+        <img src="../L6/assets/images/Picture9.png" alt="image diagram of Teredo Address format" style="background-color: #ffffff;">
+        </section>
+
+
+				
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'none', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
