@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>MPICT-IPv6</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Sam Bowne">
+		<meta name="transcriber" content="Sonokamome">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		
+		<!-- Last minute style additions by Sonokamome -->
+		<style>
+			body > div > div.slides > section.has-dark-background.present > table > tbody > tr > td{
+				text-align: center;
+			}
+
+      /* A small animation for slide 3 */
+      .colorCycle{
+        animation-name: homeCycle; 
+        animation-duration:1.15s; 
+        animation-direction:alternate; 
+        animation-iteration-count:infinite; 
+      }
+
+      @keyframes homeCycle 
+      {
+      25% {color:#fff;} 
+      50% {color:#FF0000;} 
+      75% {color:#fff;}
+      } 
+		</style>
+		
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+			
+				<!-- Slide 1 New Projects-->
+				<section data-background="#FF6A00">
+					<h2>IPv6</h2>
+          <p>Sam Bowne</p>
+					<p>City College of San Francisco</p>
+				</section>
+
+        <!-- Slide 2 Contact-->
+        <section>
+          <h2>Contact</h2>
+          <ul>
+            <li>Same Bowne</li>
+            <li>computer Networking and Information Technology</li>
+            <li>City College San Francisco</li>
+            <li>Email: <a href="mailto:sbowne@ccsf.edu">sbowne@ccsf.edu</a></li>
+            <li>Web: <a href="https://www.samsclass.info">samsclass.info</a></li>
+          </ul>
+        </section>
+
+        <!-- Slide 3 IPv4 Exhausting-->
+        <section>
+          <h2>IPv4 Exhausting</h2>
+          <ul>
+            <li>Available pool is 18 "/8 address ranges"
+              <ul>
+                <li>Each /8 has 16.8 Million Addresses</li>
+                <li>203 already allocated</li>
+                <li>35 Reserved for special uses
+                  <ul>
+                    <li>data from 5-13-2010, CNIT 202E, link IPv6 3</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <img src="../MPICT-IPv6/assets/images/Picture1.png" alt="IPv4 Exhausting" style="width: 660px; height: auto;">
+        </section>
+
+        <!-- Slide 4 The End Is Near-->
+        <section>
+          <h2>The End Is Near</h2>
+          <img src="../MPICT-IPv6/assets/images/Picture2.png" alt="The End is Near">
+          <img src="../MPICT-IPv6/assets/images/Picture3.png" alt="The End is Near">
+        </section>
+
+        <!-- Slide 5 The End of the World-->
+        <section>
+          <h2>The End of the World</h2>
+          <div style="width: 600px; display: inline-block;">
+            <ul>
+              <li>No Reprieve
+                <ul>
+                  <li>IANA Will not re-purpose class D or E addresses for general use</li>
+                </ul>
+              </li>
+              <li>People who ask for IPv4 addresses after exhaustion will not get them
+                <ul>
+                  <li>Hoarding, scalping, and simple direct sale of used Ipv4 addresses will begin soon</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <img src="../MPICT-IPv6/assets/images/Picture4.png" alt="../BayThreat2010_Bowne_Ipv6/assets/images/Picture11.png" style="float:right; width: auto; height: 525px;">
+        </section>
+
+        <!-- Slide 6 IPv6 Tunnels-->
+        <section>
+          <img src="../MPICT-IPv6/assets/images/Picture5.png" alt="image showing diagram of the Department of Defense's projected timeline for IPv6 adoption" style="width: 800px; height: 520px;">
+        <p>From link Defcon-talk 4</p>
+        </section>
+
+        <!-- Slide 7 IPv6 Tunnels-->
+        <section>
+          <h2>IPv6 Tunnels</h2>
+          <ul>
+            <li>To get started, you can tunnel IPv6 through existing Ipv4 Internet</li>
+            <li>Free IPv4-to-IPv6 Tunnels
+              <ul>
+                <li>Gogo6.com</li>
+                <li>Sixxs.net</li>
+                <li>Tunnebroker.com</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 8 GoGo6-->
+        <section>
+          <h2>GoGo6</h2>
+          <img src="../MPICT-IPv6/assets/images/Picture6.png" alt="image of gogoClIENT Utility" style="width: 350px;">
+          <br>
+            <ul>
+              <li>Easiest</li>
+            </ul>
+        </section>
+
+        <!-- Slide 9 Demonstration-->
+        <section>
+          <h2>Demonstration</h2>
+          <img src="../MPICT-IPv6/assets/images/Picture7.png" alt="screenshot of terminal testing ipv6 ping">
+          <img src="../MPICT-IPv6/assets/images/Picture8.png" alt="screenshot of terminal testing ipv6 pinging II">
+        </section>
+
+        <!-- Slide 10 IPv6 Certifications-->
+        <section>
+          <h2>IPv6 Certifications</h2>
+          <ul>
+            <li>Fun, realistic projects</li>
+            <li>He.net
+              <ul>
+                <li>Link Defcon-talk 12</li>
+              </ul>
+            </li>
+          </ul>
+          <img src="../MPICT-IPv6/assets/images/Picture9.png" alt="Image of certificate of completion of something">
+          <img src="../MPICT-IPv6/assets/images/Picture10.png" alt="screenshot of IPv6 certifications">
+        </section>
+
+        <!-- Slide 11 IPv6 resistance is futile-->
+        <section data-background="../MPICT-IPv6/assets/images/Picture8.jpg">
+          <h2>IPv6 <br> <small>RESISTANCE IS FUTILE</small></h2>
+        </section>
+
+        <!-- Slide 12 image extended Unique Identifier EUI-64-->
+        <section>
+          <img src="../MPICT-IPv6/assets/images/Picture11.png" alt="chart labeled 'Extended Unique Identifier EUI-64" style="width: 850px; height: auto;">
+        </section>
+
+        <!-- Slide 13 IPv6 Address Format-->
+        <section>
+          <h2>IPv6 Address Format</h2>
+          <img src="../MPICT-IPv6/assets/images/Picture12.png" alt="IPv6 Address Format" style="height: 443px; width: 770px;">
+          <ul>
+            <li>:: can be used once to represent a string of zeros</li>
+          </ul>
+        </section>
+
+        <!-- Slide 14 Multiple eroes can be omitted... image-->
+        <section>
+          <img src="../MPICT-IPv6/assets/images/Picture13.png" alt="Multiple eroes can be omitted..." style="width: 690px;">
+          <br>
+          <ul>
+            <li>From Zytrax: Link IPv6 10</li>
+          </ul>
+        </section>
+
+        <!-- Slide 15 IPv6 - IPv4 Addresses-->
+        <section>
+          <h2>IPv6 - IPv4 Addresses</h2>
+          <ul>
+            <li>A hybrid format may be used when dealing with IPv6-IPv4 addresses where the normal Ipv4 dotted decimal notation may be used after the first 6, 16 bit address elements:</li>
+          </ul>
+          <img src="../MPICT-IPv6/assets/images/Picture14.png" alt="IPv6 - IPv4 addresses" style="width: 750px; height: 220px;">
+        </section>
+
+        <!-- Slide 16 Image examples IPv6-->
+        <section>
+          <img src="../MPICT-IPv6/assets/images/Picture15.png" alt="Image examples IPv6" style="width:690px; height: 390px;">
+        </section>
+
+        <!-- Slide 17 IPv6 Address Types-->
+        <section>
+          <img src="../MPICT-IPv6/assets/images/Picture16.png" alt="IPv6 Address Types" style="width: 730px; height: auto;">
+        </section>
+
+        <!-- Slide 18 Link-local Addresses-->
+        <section>
+          <img src="../MPICT-IPv6/assets/images/Picture17.png" alt="Link-local Addresses" style="height: 500px;">
+        </section>
+
+        <!-- Slide 19 Global Unicast-->
+        <section>
+          <img src="../MPICT-IPv6/assets/images/Picture18.png" alt="Image Global Unicast">
+        </section>
+
+        <!-- Slide 20 Image Interface Identifier How to configure-->
+        <section>
+          <img src="../MPICT-IPv6/assets/images/Picture19.png" alt="Image Interface Identifier How to configure" style="width: 950px; height: 450px;">
+        </section>
+
+        <!-- Slide 21 Multiple Addresses-->
+        <section>
+          <h2>Multiple Addresses</h2>
+          <ul>
+            <li>Note: Interfaces normally have two addresses, or even more
+              <ul class="li">
+                Link-local &#x02004;&#x02004;&#x02004; <code style="color:#FFD800;">FE80::w.x.y.z</code>
+              </ul>
+              <li>Global unicast</li>
+            </li>
+          </ul>
+          <img src="../MPICT-IPv6/assets/images/Picture20.png" alt="Multiple Addresses">
+        </section>
+
+        <!-- Slide 22 Extended Unique Identifier EUI-64-->
+        <section>
+        <img src="../MPICT-IPv6/assets/images/Picture21.png" alt="EUI-64" style="height: 564px; width: 830px;">
+        <ul>
+          <li>Used by Ethernet</li>
+        </ul>
+        </section>
+
+        <!-- Slide 23 Example-->
+        <section>
+          <h2>Example</h2>
+          <ul>
+            <li>Interface MAC 00-40-63-ca-9a-20</li>
+            <li>IPv6 Interface ID (EUI-64)
+              <ul>
+                <li>::0040:63FF:FECA:9A20</li>
+              </ul>
+            </li>
+            <li>or</li>
+            <li>::40:63FF:FECA:9A20</li>
+            <li>link local
+              <ul>
+                <li>FE80::40:63FF:FECA:9A20</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 24 image IPv6 Header Format-->
+        <section>
+        <img src="../MPICT-IPv6/assets/images/Picture22.png" alt="image IPv6 Header Format">
+        </section>
+
+        <!-- Slide 25 image IPv4 Header Format-->
+        <section>
+          <img src="../MPICT-IPv6/assets/images/Picture23.png" alt="image IPv4 Header Format">
+        </section>
+
+        <!-- Slide 26 image IPv6 Header-->
+        <section>
+        <img src="../MPICT-IPv6/assets/images/Picture24.png" alt="image IPv6 Header">
+        </section>
+
+        <!-- Slide 27 Control Protocol(s)-->
+        <section>
+        <img src="../MPICT-IPv6/assets/images/Picture25.png" alt="Control Protocol(s)">
+        </section>
+
+        <!-- Slide 28 ICMPv6-->
+        <section>
+         <img src="../MPICT-IPv6/assets/images/Picture26.png" alt="ICMPv6">
+        </section>
+
+        <!-- Slide 29 Big Brother is watching you!-->
+        <section>
+         <img src="../MPICT-IPv6/assets/images/Picture27.png" alt="Big Brother is watching you">
+        </section>
+
+        <!-- Slide 30 Privacy Extensions for SLAAC-->
+        <section>
+         <img src="../MPICT-IPv6/assets/images/Picture28.png" alt="Privacy Extension for SLAAC">
+        </section>
+
+        <!-- Slide 31 IPv6 & DNS-->
+        <section>
+         <img src="../MPICT-IPv6/assets/images/Picture29.png" alt="IPv6 and DNS">
+        </section>
+
+        <!-- Slide 32 AAAA Records in DNS-->
+        <section>
+        <h2>AAAA Records in DNS</h2>
+         <img src="../MPICT-IPv6/assets/images/Picture30.png" alt="AAAA Records in DNS">
+         <ul>
+           <li>iana.org and IPv6.net work too</li>
+         </ul>
+        </section>
+
+        <!-- Slide 33 Migration-->
+        <section>
+         <img src="../MPICT-IPv6/assets/images/Picture31.png" alt="Migration">
+        </section>
+
+        <!-- Slide 34 IPv6 Advantages-->
+        <section>
+         <img src="../MPICT-IPv6/assets/images/Picture32.png" alt="IPv6 Advantages">
+        </section>
+
+        <!-- Slide 35 Primary Source-->
+        <section>
+         <img src="../MPICT-IPv6/assets/images/Picture33.png" alt="Primary Source">
+         <br>
+         <ul>
+           <li>I got a lot of this talk here</li>
+         </ul>
+        </section>
+
+
+
+				
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'none', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
