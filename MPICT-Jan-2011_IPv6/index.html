@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>MPICT-Jan-2011_IPv6</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Sam Bowne">
+		<meta name="transcriber" content="Sonokamome">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		
+		<!-- Last minute style additions by Sonokamome -->
+		<style>
+			body > div > div.slides > section.has-dark-background.present > table > tbody > tr > td{
+				text-align: center;
+			}
+
+      /* A small animation for slide 3 */
+      .colorCycle{
+        animation-name: homeCycle; 
+        animation-duration:1.15s; 
+        animation-direction:alternate; 
+        animation-iteration-count:infinite; 
+      }
+
+      @keyframes homeCycle 
+      {
+      25% {color:#fff;} 
+      50% {color:#FF0000;} 
+      75% {color:#fff;}
+      } 
+		</style>
+		
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+			
+				<!-- Slide 1 New Projects-->
+				<section data-background="#FF6A00">
+					<h2>Getting Started with IPv6</h2>
+          <p>Sam Bowne</p>
+					<p>City College of San Francisco</p>
+				</section>
+
+        <!-- Slide 2 How to Get This Presentation-->
+        <section>
+          <h2>How to Get This Presentation</h2>
+          <ul>
+            <li>
+              Got to <strong>Samsclass.info</strong>
+            </li>
+            <li>Click "<strong>IPv6 Materials</strong>"</li>
+            <li>IPv6 Certification Projects
+              <ul>
+                <li>At the top</li>
+              </ul>
+            </li>
+            <li>This Powerpoint
+              <ul>
+                <li>In the "<strong>Lectures</strong>" section</li>
+              </ul>
+            </li>
+            <li>Linkns Baythreat-1, etc.
+              <ul>
+                <li>In the "<strong>Links</strong>" section</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 3 IPv4 Exhaustion-->
+        <section>
+          <h2>IPv4 Exhaustion</h2>
+        </section>
+
+        <!-- Slide 4 IPv4 Addresse: 32 Bits-->
+        <section>
+          <h2>IPv4 Addresse: 32 Bits</h2>
+          <ul>
+            <li>IPv4 address: 192.168.1.10
+              <ul>
+                <li>Four bytes</li>
+              </ul>
+            </li>
+            <li>In Binary: <br>11000000 10101000 000000001 00001010</li>
+            <li>2<sup>32</sup> total addresses
+              <ul>
+                <li>4 billion</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 5 IPv4 Address Depletion-->
+        <section>
+          <h2>IPv4 Address Depletion</h2>
+          <img src="../MPICT-Jan-2011_IPv6/assets/images/Picture1.png" alt="chart showing IPv4 address pool for IANA running out between 1995 to ~2011">
+          <ul>
+            <li>Link Baythreat-8</li>
+          </ul>
+        </section>
+
+        <!-- Slide 6 IPv4 Address Space-->
+        <section>
+          <h2>IPv4 Address Space</h2>
+          <img src="../MPICT-Jan-2011_IPv6/assets/images/Picture2.png" alt="IPv4 Address Space Classes" style="width: 660px; height: auto;">
+        </section>
+
+        <!-- Slide 7 Jan 21, 2010 Available Blocks: 24-->
+        <section>
+          <h3>Jan 21, 2010 Available Blocks: 24</h3>
+          <img src="../MPICT-Jan-2011_IPv6/assets/images/Picture3.png" alt="Jan 21, 2010 Available Blocks: 24" style="width: 660px; height: auto;">
+        </section>
+
+        <!-- Slide 8 April 10, 2010 Available Blocks: 20-->
+        <section>
+          <h3>April 10, 2010 Available Blocks: 20</h3>
+          <img src="../MPICT-Jan-2011_IPv6/assets/images/Picture4.png" alt="April 10, 2010 Available Blocks: 20" style="width: 660px; height: auto;">
+        </section>
+
+        <!-- Slide 9 May 8, 2010 Available Bocks: 13-->
+        <section>
+          <h2>May 8, 2010 Available Bocks: 13</h2>
+          <img src="../MPICT-Jan-2011_IPv6/assets/images/Picture5.png" alt="May 8, 2010 Available Bocks: 13" style="width: 660px; height: auto;">
+        </section>
+
+        <!-- Slide 10 Nov 30, 2010 Available Blocks: 7-->
+        <section>
+          <h3>Nov 30, 2010 Available Blocks: 7</h3>
+          <img src="../MPICT-Jan-2011_IPv6/assets/images/Picture6.png" alt="Nov 30, 2010 Available Blocks: 7" style="width: 660px; height: auto;">
+        </section>
+
+        <!-- Slide 11 2011: The End-->
+        <section>
+          <h2>2011: The End</h2>
+          <img src="../MPICT-Jan-2011_IPv6/assets/images/Picture7.png" alt="2011: The End">
+          <br>
+          <ul>
+            <li>Link BayThreat-7</li>
+          </ul>
+        </section>
+
+        <!-- Slide 12 The End of the World-->
+        <section>
+          <h2>The End of the World</h2>
+          <div style="width: 600px; display: inline-block;">
+            <ul>
+              <li>No Reprieve
+                <ul>
+                  <li>IANA Will not re-purpose class D or E addresses for general use</li>
+                </ul>
+              </li>
+              <li>People who ask for IPv4 addresses after exhaustion will not get them
+                <ul>
+                  <li>Hoarding, scalping, and simple direct sale of used Ipv4 addresses will begin soon</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <img src="../MPICT-Jan-2011_IPv6/assets/images/Picture8.png" alt="../BayThreat2010_Bowne_Ipv6/assets/images/Picture8.png" style="float:right; width: auto; height: 525px;">
+        </section>
+
+        <!-- Slide 13 IPv6-->
+        <section>
+          <h2>IPv6 <br> <small>The Solution</small></h2>
+        </section>
+
+        <!-- Slide 14 IPv6 Addresses: 128 Bits-->
+        <section>
+          <h2>IPv6 Addresses: 128 Bits</h2>
+          <ul>
+            <li>IPv6 address</li>
+            <li>2001:05c0:1000:000b:0000:0000:0000:66fb
+              <ul>
+                <li>Omitting unnecessary zeroes</li>
+              </ul>
+            </li>
+            <li>2001:5c0:1000:b::66fb
+              <ul>
+                <li>Eight fields, each 16 bits long
+                  <ul>
+                    <li>4 hexadecimal characters</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>2 <sup>128</sup> total addresses
+              <ul>
+                <li>340 billion billion billion billion</li>
+                <li>Enough for a while</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 15 Projected DOD Timeline-->
+        <section>
+          <h2>Projected DOD Timeline</h2>
+          <img src="../MPICT-Jan-2011_IPv6/assets/images/Picture9.png" alt="Projected DOD Timeline">
+          <br>
+          <ul>
+            <li>Link BayThreat-10</li>
+          </ul>
+        </section>
+
+        <!-- Slide 16 Federal IPv6 Transition Timeline-->
+        <section>
+          <h2>Federal IPv6 Transition Timeline</h2>
+          <img src="../MPICT-Jan-2011_IPv6/assets/images/Picture10.png" alt="Federal IPv6 Transition Timeline" style="width: 670px; height: 400px;">
+          <br>
+          <ul>
+            <li>From Cisco (link BayThreat-11)</li>
+          </ul>
+        </section>
+
+        <!-- Slide 17 Executive Summary Thus Far-->
+        <section>
+          <h2>Executive Summary Thus Far</h2>
+        </section>
+
+        <!-- Slide 18 IPv4 is Full-->
+        <section>
+          <h2>IPv4 if Full</h2>
+          <img src="../MPICT-Jan-2011_IPv6/assets/images/Picture11.png" alt="train in India full of people">
+          <ul>
+            <li>Image from zinyaw.files.wordpress.com</li>
+          </ul>
+        </section>
+
+        <!-- Slide 19 Doom-->
+        <section>
+          <div style="float: left; width: 600px;">
+            <h2>Doom</h2>
+            <h3>Because IPv6 is</h3>
+            <h1>The End Of The World!</h1>
+          </div>
+          <img src="../MPICT-Jan-2011_IPv6/assets/images/Picture12.jpg" style="float:right;" alt="image of old comic with people with 'the end is nigh' facing incoming meteors">
+        </section>
+
+        <!-- Slide 20 IPv6 Resistance is Futile-->
+        <section data-background="../MPICT-Jan-2011_IPv6/assets/images/Picture13.jpg">
+          <h2>IPv6 <br> <small>RESISTANCE IS FUTILE</small></h2>
+        </section>
+
+        <!-- Slide 21 Migration to IPv6-->
+        <section>
+          <h2>Migration to IPv6</h2>
+        </section>
+
+        <!-- Slide 22 Methods of IPv6 Migration-->
+        <section>
+          <h2>Methods of IPv6 Migration</h2>
+          <ul>
+            <li><strong>Ignore</strong> IPv6: Stay on IPv4-only</li>
+            <li><strong>Gateways</strong>: Devices that convert Ipv6 to IPv4</li>
+            <li><strong>Tunnel</strong>: Ipv6 over IPv4</li>
+            <li><strong>Dual-Stack</strong>: IPv4 and IPv6 together</li>
+            <li><strong>Nirvana</strong>: Ipv6-only</li>
+          </ul>
+        </section>
+
+        <!-- Slide 23 IPv6 Tunnels-->
+        <section>
+          <h2>IPv6 Tunnels</h2>
+          <ul>
+            <li>Fast and easy to set up--best for n00bs</li>
+            <li>Not the best for security or performance</li>
+            <li>Free IPv4-to-IPv6 Tunnels
+              <ul>
+                <li>Gogo6.com</li>
+                <li>Sixxs.net</li>
+                <li>Tunnebroker.com</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 24 GoGo6-->
+        <section>
+          <h2>GoGo6</h2>
+          <img src="../MPICT-Jan-2011_IPv6/assets/images/Picture12.png" alt="image of gogoClIENT Utility" style="width: 350px; height: auto;">
+          <br>
+          <ul>
+            <li>Easiest</li>
+          </ul>
+        </section>
+
+        <!-- Slide 25 Demonstration-->
+        <section>
+          <h2>Demonstration</h2>
+          <img src="../MPICT-Jan-2011_IPv6/assets/images/Picture13.png" alt="Demonstration">
+          <img src="../MPICT-Jan-2011_IPv6/assets/images/Picture13.png" alt="Demonstration">
+        </section>
+
+        <!-- Slide 26 Companies Already on IPv6-->
+        <section>
+          <h2>Companies Already on IPv6</h2>
+          <ul>
+            <li>IPv6.google.com</li>
+            <li>www.v6.facebook.com</li>
+            <li>comcast6.net</li>
+            <li>ipv6.cnn.com</li>
+            <li>More at link Baythreat-12</li>
+          </ul>
+        </section>
+
+        <!-- Slide 27 IPv6 Certifications-->
+        <section>
+          <h2>IPv6 Certifications</h2>
+          <ul>
+            <li>Fun, realistic projects</li>
+            <li>He.net
+              <ul>
+                <li>Link Defcon-talk 12</li>
+              </ul>
+            </li>
+          </ul>
+          <img src="../MPICT-Jan-2011_IPv6/assets/images/Picture15.png" alt="Image of certificate of completion of something">
+          <img src="../MPICT-Jan-2011_IPv6/assets/images/Picture16.png" alt="screenshot of IPv6 certifications">
+        </section>
+
+        <!-- Slide 28 IPv6 Sages-->
+        <section>
+          <h2>IPv6 Sages</h2>
+          <img src="../MPICT-Jan-2011_IPv6/assets/images/Picture17.png" alt="IPv6 Sages">
+          <br>
+          <ul>
+            <li>As of 1-7-11</li>
+            <li>Link BayThreat-18</li>
+          </ul>
+        </section>
+
+        <!-- Slide 29 IPv6 Sages II-->
+        <section>
+          <h2>IPv6 Sages</h2>
+          <img src="../MPICT-Jan-2011_IPv6/assets/images/Picture18.png" alt="IPv6 Sages" style="width: 690px; height: auto;">
+          <ul>
+            <li>29 IPv6 Sages from CCSF</li>
+            <li>10 IPv6 Sages from Firsco, TX
+              <ul>
+                <li>As of 1-7-11</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 30 T-Shirt -->
+        <section>
+          <h2>T-Shirt</h2>
+          <img src="../MPICT-Jan-2011_IPv6/assets/images/Picture19.jpg" alt="screenshot of Hurricane Electric's 'ipv6 t-shirt' promotion" style="width: 690px; height: auto;">
+          <ul>
+            <li>#1 motivator for IPv6 Certification</li>
+            <li>Link Baythreat - 9</li>
+          </ul>
+        </section>
+
+        <!-- Slide 31 Security Problems-->
+        <section>
+          <h2>Security Problems</h2>
+        </section>
+
+        <!-- Slide 32 Extended Unique Identifier EUI-64 -->
+        <section>
+          <img src="../MPICT-Jan-2011_IPv6/assets/images/Picture20.png" alt="chart labeled 'Extended Unique Identifier EUI-64'" style="width: 550px; height: auto;">
+          <br>
+          <ul>
+            <li>Used by Ethernet</li>
+          </ul>
+        </section>
+
+        <!-- Slide 33 Privacy Risk-->
+        <section>
+          <h2>Privacy Risk</h2>
+          <ul>
+            <li>Anyone who has your IP address also has your MAC address!</li>
+            <li>There is a "Privacy Extensions" technique to avoid this, enabled by default in Vista and Windows 7</li>
+          </ul>
+        </section>
+
+        <!-- Slide 34 ICMPv6-->
+        <section>
+          <h2>ICMPv6</h2>
+          <ul>
+            <li>Required for all networks</li>
+            <li>Cannot be blocked</li>
+            <li>Replaces ARP</li>
+            <li>"Neighbor Discovery" is trivial</li>
+          </ul>
+        </section>
+
+        <!-- Slide 35 THC-IPv6-->
+        <section>
+          <h2>THC-IPv6</h2>
+          <ul>
+            <li>Hacker's Toolkit</li>
+            <li>Runs fine on Ubuntu, even in VMware on Windows 7</li>
+            <li>Instructions: link BayThreat-14</li>
+          </ul>
+          <img src="../MPICT-Jan-2011_IPv6/assets/images/Picture21.png" alt="Ubuntu linux running on Vmware workstation" style="width: 434px; height: auto;">
+        </section>
+
+        <!-- Slide 36 Other Risks-->
+        <section>
+          <h2>Other Risks</h2>
+          <ul>
+            <li>Many security appliances are not ready for IPv6, so it's often bypasses them
+              <ul>
+                <li>Torrents run over IPv6
+                  <ul>
+                    <li>Link BayThreat-15</li>
+                  </ul>
+                </li>
+                <li>Some VPN appliances are not ready, so IPv6 connection must bypass them</li>
+              </ul>
+            </li>
+            <li>Packet Amplification Attacks
+              <ul>
+                <li>Routing Header Zero</li>
+                <li>Ping-pong
+                  <ul>
+                    <li>Links BayThreat-16 and 17</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Slide 37 Hands-on Project-->
+        <section>
+          <h2>Hands-on Project</h2>
+          <ul>
+            <li>
+              Got to <strong>samsclass.info</strong>
+            </li>
+            <li>
+              Click <strong>IPv6 Materials</strong>
+            </li>
+            <li>Click <strong>IPv6 Certification Project 1</strong></li>
+          </ul>
+          <img src="../MPICT-Jan-2011_IPv6/assets/images/Pictures22.,png" alt="Hands-On Project">
+        </section>
+
+				
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'none', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
